@@ -53,44 +53,6 @@
     </ul>
   </div>
 
-  <!-- ============================================================
-       PASTE-AND-FORMAT TOOL
-       Paste your Discord update text in the box, click Format,
-       then copy the HTML it generates and paste it above (as a
-       new .update-post block, newest at the top).
-  ============================================================= -->
-
-  <div class="guide-toc" style="margin-top:50px;">
-    <h4>✍️ Paste a new update from Discord</h4>
-    <p style="color:var(--dim);font-size:14px;margin-top:0;">
-      Paste your Discord update text below (one line per bullet), fill in the version/date, click
-      <strong>Format</strong>, then copy the generated HTML and paste it above the older updates in this file.
-    </p>
-    <input id="verInput" placeholder="Version, e.g. v2.0.5" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);">
-    <input id="dateInput" placeholder="Date, e.g. September 2026" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);">
-    <textarea id="notesInput" rows="6" placeholder="Paste your Discord update notes here, one line per bullet..." style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);font-family:inherit;"></textarea>
-    <button onclick="formatUpdate()" class="btn btn-primary" style="margin-top:6px;">Format</button>
-    <textarea id="output" rows="8" readonly style="width:100%;padding:10px;margin-top:14px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--green);font-family:Consolas,monospace;font-size:13px;"></textarea>
-  </div>
-
-  <script>
-    function formatUpdate(){
-      const version = document.getElementById('verInput').value.trim() || 'vX.X.X';
-      const date = document.getElementById('dateInput').value.trim() || 'Date';
-      const notes = document.getElementById('notesInput').value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-      let html = '  <div class="update-post">\n';
-      html += '    <div class="version">' + version + '</div>\n';
-      html += '    <div class="date">' + date + '</div>\n';
-      html += '    <ul>\n';
-      notes.forEach(line => {
-        html += '      <li>' + line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</li>\n';
-      });
-      html += '    </ul>\n';
-      html += '  </div>';
-      document.getElementById('output').value = html;
-    }
-  </script>
-
   <h2 style="margin-top:70px;">Planned Features</h2>
   <div class="subtitle">On the roadmap — not live yet.</div>
   <div class="planned-grid">
