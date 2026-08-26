@@ -37,10 +37,14 @@
 
   <div class="update-post">
     <div class="version">v2.0.4</div>
-    <div class="date">Latest</div>
+    <div class="date">Massive Update for Lovense Support — August 16, 2026</div>
     <ul>
-      <li>Replace this with your real update notes.</li>
-      <li>One line per bullet point, same as Discord.</li>
+      <li><strong>Predictive Movement</strong> — Learns your first 2 strokes, then sends a template ahead of time to your device so it feels like there's little to no delay. If your stroke changes too much, there will be a brief moment of de-sync. Two sliders control how quickly the template transitions toward new movement patterns.</li>
+      <li>Inside Predictive Movement, a <strong>Calibrate Delay</strong> button lets you figure out your device's delay using the simulator, or you can set it manually. The Lovense Solace tends to run about 1200–1500ms delay.</li>
+      <li>Saved Presets, for situations where you have multiple devices.</li>
+      <li><strong>Motor Kick-Start</strong> — Starts every new stroke direction with a little extra power so the device doesn't feel sluggish. Makes movement snappier.</li>
+      <li><strong>Source Mapping</strong> (under Active Sources) — Instead of manually digging through the debug log, this section lists off every source it comes across. Click a source and it's added to your Active Sources automatically.</li>
+      <li>Tweaks: UI reordering, Debug Log filters and pop-out window, and the OSC port number now shows in the Status section.</li>
     </ul>
   </div>
 
@@ -48,22 +52,37 @@
     <div class="version">v2.0.3</div>
     <div class="date">Previous</div>
     <ul>
-      <li>Example: Fixed window title bug.</li>
-      <li>Example: Renamed product across all tools.</li>
+      <li>Added custom OSC source support — enter an exact address, or a wildcard pattern for avatars with non-standard tag names.</li>
+      <li>Added a per-source Universal Wildcard toggle for the built-in PenOthers, TouchSelf, and TouchOthers sources.</li>
+      <li>Added Pause/Resume for the debug log, for easier copying without scroll interference.</li>
+      <li>Fixed duplicate-packet log spam by applying rounding and deduplication to all incoming OSC traffic, not just built-in sources.</li>
+      <li>Reduced OSC value rounding precision for smoother, less noisy updates.</li>
+    </ul>
+  </div>
+
+  <div class="update-post">
+    <div class="version">v2.0.2</div>
+    <div class="date">Previous</div>
+    <ul>
+      <li>Hotfixes.</li>
+    </ul>
+  </div>
+
+  <div class="update-post">
+    <div class="version">v2.0.1</div>
+    <div class="date">Previous</div>
+    <ul>
+      <li>Added OSCQuery functionality so there are no more port conflicts if you're running another OSC-related program like VRCFT.</li>
+      <li>Added a reminder that closing the app only minimizes it to the taskbar. Trying to run a second instance while one is already open now shows a warning — the app won't work correctly with multiple instances running at once.</li>
     </ul>
   </div>
 
   <h2 style="margin-top:70px;">Planned Features</h2>
   <div class="subtitle">On the roadmap — not live yet.</div>
-  <div class="planned-grid">
-    <div class="planned-card">
-      <h4>🎓 Patreon Membership</h4>
-      <p>Monthly membership tier for VRChat world access, separate from one-time OSCGetsHandy purchases.</p>
-    </div>
-    <div class="planned-card">
-      <h4>🔏 Code Signing</h4>
-      <p>Signed .exe builds to stop antivirus/SmartScreen false-positive flags.</p>
-    </div>
+  <div class="planned-card" style="max-width:500px;margin:0 auto;text-align:center;">
+    <h4>👀 Got something big cooking...</h4>
+    <p>Join the Discord to find out! 🎉</p>
+    <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Join the Discord</a>
   </div>
 
 </section>
