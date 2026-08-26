@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Updates &amp; Planned Features — OSCGetsHandy</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">
+    <img src="logo.png" alt="OSCGetsHandy logo" class="logo-mark">
+    OSCGetsHandy
+  </a>
+  <div class="navlinks">
+    <a href="index.html#features">Features</a>
+    <a href="guides.html">How-To Guides</a>
+    <a href="updates.html">Updates</a>
+    <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Discord</a>
+    <a class="cta" href="index.html#buy">Get It</a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="section-head"><h2>Updates &amp; Planned Features</h2></div>
+  <div class="subtitle">What's new, and what's coming next.</div>
+
+  <!-- ============================================================
+       UPDATE LOG
+       To add a new update: copy one .update-post block below,
+       paste it right under this comment (newest on top), and edit
+       the date/version/text. This is literally the same text you'd
+       post in Discord — just wrapped in <li> tags.
+  ============================================================= -->
+
+  <div class="update-post">
+    <div class="version">v2.0.4</div>
+    <div class="date">Latest</div>
+    <ul>
+      <li>Replace this with your real update notes.</li>
+      <li>One line per bullet point, same as Discord.</li>
+    </ul>
+  </div>
+
+  <div class="update-post">
+    <div class="version">v2.0.3</div>
+    <div class="date">Previous</div>
+    <ul>
+      <li>Example: Fixed window title bug.</li>
+      <li>Example: Renamed product across all tools.</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       PASTE-AND-FORMAT TOOL
+       Paste your Discord update text in the box, click Format,
+       then copy the HTML it generates and paste it above (as a
+       new .update-post block, newest at the top).
+  ============================================================= -->
+
+  <div class="guide-toc" style="margin-top:50px;">
+    <h4>✍️ Paste a new update from Discord</h4>
+    <p style="color:var(--dim);font-size:14px;margin-top:0;">
+      Paste your Discord update text below (one line per bullet), fill in the version/date, click
+      <strong>Format</strong>, then copy the generated HTML and paste it above the older updates in this file.
+    </p>
+    <input id="verInput" placeholder="Version, e.g. v2.0.5" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);">
+    <input id="dateInput" placeholder="Date, e.g. September 2026" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);">
+    <textarea id="notesInput" rows="6" placeholder="Paste your Discord update notes here, one line per bullet..." style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);font-family:inherit;"></textarea>
+    <button onclick="formatUpdate()" class="btn btn-primary" style="margin-top:6px;">Format</button>
+    <textarea id="output" rows="8" readonly style="width:100%;padding:10px;margin-top:14px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--green);font-family:Consolas,monospace;font-size:13px;"></textarea>
+  </div>
+
+  <script>
+    function formatUpdate(){
+      const version = document.getElementById('verInput').value.trim() || 'vX.X.X';
+      const date = document.getElementById('dateInput').value.trim() || 'Date';
+      const notes = document.getElementById('notesInput').value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+      let html = '  <div class="update-post">\n';
+      html += '    <div class="version">' + version + '</div>\n';
+      html += '    <div class="date">' + date + '</div>\n';
+      html += '    <ul>\n';
+      notes.forEach(line => {
+        html += '      <li>' + line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</li>\n';
+      });
+      html += '    </ul>\n';
+      html += '  </div>';
+      document.getElementById('output').value = html;
+    }
+  </script>
+
+  <h2 style="margin-top:70px;">Planned Features</h2>
+  <div class="subtitle">On the roadmap — not live yet.</div>
+  <div class="planned-grid">
+    <div class="planned-card">
+      <h4>🎓 Patreon Membership</h4>
+      <p>Monthly membership tier for VRChat world access, separate from one-time OSCGetsHandy purchases.</p>
+    </div>
+    <div class="planned-card">
+      <h4>🔏 Code Signing</h4>
+      <p>Signed .exe builds to stop antivirus/SmartScreen false-positive flags.</p>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>OSCGetsHandy by Devvious · <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Discord</a> · <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a></p>
+  <p>&copy; 2026 Devvious. Not affiliated with VRChat Inc.</p>
+</footer>
+
+</body>
+</html>

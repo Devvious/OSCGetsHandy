@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How-To Guides — OSCGetsHandy</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">
+    <img src="logo.png" alt="OSCGetsHandy logo" class="logo-mark">
+    OSCGetsHandy
+  </a>
+  <div class="navlinks">
+    <a href="index.html#features">Features</a>
+    <a href="guides.html">How-To Guides</a>
+    <a href="updates.html">Updates</a>
+    <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Discord</a>
+    <a class="cta" href="index.html#buy">Get It</a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="section-head"><h2>How-To Guides</h2></div>
+  <div class="subtitle">Every feature, explained step by step — ordered from most to least important.</div>
+
+  <div class="guide-toc">
+    <h4>Jump to a guide</h4>
+    <ol>
+      <li><a href="#getting-started">Getting Started (Install, License, First Connection)</a></li>
+      <li><a href="#active-sources">Active Sources</a></li>
+      <li><a href="#predictive-movement">Predictive Movement</a></li>
+      <li><a href="#motor-kick-start">Motor Kick-Start</a></li>
+      <li><a href="#boost">Boost</a></li>
+      <li><a href="#deadzone">Deadzone Limits</a></li>
+      <li><a href="#source-mapping">Source Mapping (Custom Sources)</a></li>
+      <li><a href="#universal-wildcard">Universal Wildcard</a></li>
+      <li><a href="#jitter">Jitter Filter</a></li>
+      <li><a href="#invert">Invert Position</a></li>
+      <li><a href="#diagnostics">Run Diagnostics</a></li>
+      <li><a href="#calibration">Calibrate Delay</a></li>
+      <li><a href="#debug-log">Debug Log &amp; Filters</a></li>
+      <li><a href="#licensing">License &amp; Devices</a></li>
+    </ol>
+  </div>
+
+  <div class="guide" id="getting-started">
+    <span class="priority">Start Here</span>
+    <h3>Getting Started</h3>
+    <ol>
+      <li>Purchase on <a href="https://payhip.com/b/lFIj0" target="_blank" rel="noopener">Payhip</a> — your license key arrives by email.</li>
+      <li>Install and open <a href="https://intiface.com/central/" target="_blank" rel="noopener">Intiface Central</a>, turn your toy on, and let it connect there first.</li>
+      <li>Run OSCGetsHandy. Enter your license key and the email you purchased with.</li>
+      <li>Click <strong>Start</strong>. Status should change to "Connected — [your device]".</li>
+      <li>In VRChat: Action Menu → Options → OSC → Enable.</li>
+    </ol>
+    <div class="tip">If Status gets stuck on "No devices found," make sure Intiface shows your toy as connected before clicking Start in OSCGetsHandy.</div>
+  </div>
+
+  <div class="guide" id="active-sources">
+    <span class="priority">Core</span>
+    <h3>Active Sources</h3>
+    <p>Controls which SPS parameters (PenOthers, TouchSelf, TouchOthers) the bridge listens to.</p>
+    <ol>
+      <li>Open the <strong>Active Sources</strong> section in Settings.</li>
+      <li>Check/uncheck each source depending on what you want to trigger movement.</li>
+    </ol>
+    <div class="tip">Enabling too many sources at once can cause them to fight over the toy's position. Start with one and add more only if needed.</div>
+  </div>
+
+  <div class="guide" id="predictive-movement">
+    <span class="priority">Recommended for Solace</span>
+    <h3>Predictive Movement</h3>
+    <p>Compensates for hardware delay on toys like the Lovense Solace by learning your stroke pattern and sending it slightly ahead of time.</p>
+    <ol>
+      <li>Open <strong>Predictive Movement</strong> and enable it.</li>
+      <li>Set <strong>Send Ahead</strong> — use the Calibrate Delay tool below to find your device's exact number, or check the Device Reference Sheet for a starting estimate.</li>
+      <li>Adjust <strong>Size Tolerance</strong> and <strong>Speed Tolerance</strong> only if the prediction feels like it's "fighting" changes in your stroke pattern — higher tolerance adapts more slowly but stays smoother.</li>
+      <li>The first couple of strokes always play normally while it learns — this is expected.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="motor-kick-start">
+    <span class="priority">Recommended for Solace</span>
+    <h3>Motor Kick-Start</h3>
+    <p>Helps toys with slow motor acceleration (e.g. Solace) respond faster right after a direction change.</p>
+    <ol>
+      <li>Open <strong>Motor Kick-Start</strong> and enable it.</li>
+      <li>Tune <strong>Burst Strength</strong> first — lower value = stronger kick.</li>
+      <li><strong>Burst Length</strong> is subtle and often barely noticeable — leave it at default unless you want to fine-tune further.</li>
+    </ol>
+    <div class="tip">Leave this off for The Handy — it doesn't need it.</div>
+  </div>
+
+  <div class="guide" id="boost">
+    <span class="priority">Optional</span>
+    <h3>Boost</h3>
+    <p>Stretches your current motion range outward — e.g. moving within 80–100% becomes 40–100%.</p>
+    <ol>
+      <li>Drag the Boost slider up from 1.0 (off) toward 3.0 (max stretch).</li>
+      <li>It auto-calibrates to your actual current motion range, so you don't need to configure anything else.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="deadzone">
+    <span class="priority">Optional</span>
+    <h3>Deadzone Limits</h3>
+    <p>Hard-limits how far the toy is ever allowed to move.</p>
+    <ol>
+      <li>Open <strong>Deadzone Limits</strong>.</li>
+      <li>Set <strong>Low limit</strong> and <strong>High limit</strong> — the stroker will never move outside this range.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="source-mapping">
+    <span class="priority">Advanced</span>
+    <h3>Source Mapping (Custom Sources)</h3>
+    <p>Lets you add OSC addresses that aren't part of the default asset.</p>
+    <ol>
+      <li>Click <strong>Source Mapping</strong> to see every OSC address detected live.</li>
+      <li>Click any listed address to add it automatically, or use <strong>+ Add Source</strong> to paste one manually.</li>
+      <li>Rename, reorder, or delete custom sources any time using the icons next to each entry.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="universal-wildcard">
+    <span class="priority">Advanced</span>
+    <h3>Universal Wildcard</h3>
+    <p>Makes a built-in source (PenOthers/TouchSelf/TouchOthers) accept ANY tag name automatically, instead of only the default asset's exact tag.</p>
+    <ol>
+      <li>In <strong>Active Sources</strong>, check <strong>Universal Wildcard</strong> next to the source you want to make universal.</li>
+    </ol>
+    <div class="tip">Caveat: if two different tags matching the same universal source are both active at once, whichever packet arrives most recently wins — this can cause jittery positioning. Only enable it if you're confident just one matching tag is realistically active at a time.</div>
+  </div>
+
+  <div class="guide" id="jitter">
+    <span class="priority">Optional</span>
+    <h3>Jitter Filter</h3>
+    <p>Ignores tiny movements caused by connection noise so the toy doesn't twitch on every packet.</p>
+    <ol>
+      <li>Enable <strong>Jitter Filter</strong>.</li>
+      <li>Raise the <strong>Threshold</strong> slider until twitching stops — start low and increase gradually.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="invert">
+    <span class="priority">Situational</span>
+    <h3>Invert Position</h3>
+    <p>Flips the position output — use this only if your device is physically mounted or held upside down.</p>
+    <ol>
+      <li>Check <strong>Invert (device upside down)</strong> near the bottom of the settings window.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="diagnostics">
+    <span class="priority">Troubleshooting</span>
+    <h3>Run Diagnostics</h3>
+    <p>A one-click self-check that tells you exactly what's wrong.</p>
+    <ol>
+      <li>Menu bar → <strong>Help → Run Diagnostics</strong>.</li>
+      <li>Each line shows ✓ or ✗ with a plain-English explanation for anything failing.</li>
+      <li>Click <strong>Run Again</strong> after making a change to re-check.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="calibration">
+    <span class="priority">Advanced</span>
+    <h3>Calibrate Delay</h3>
+    <p>Measures your specific device's real-world delay for use with Predictive Movement.</p>
+    <ol>
+      <li>Turn off any continuously-running test signal first.</li>
+      <li>Click <strong>Start Calibration</strong>.</li>
+      <li>In the OSC Simulator, click <strong>Send Calibration Pulse</strong>.</li>
+      <li>Tap the button in OSCGetsHandy the instant you feel the toy move.</li>
+      <li>Repeat 3 times — the average is applied automatically to the Send Ahead slider.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="debug-log">
+    <span class="priority">Troubleshooting</span>
+    <h3>Debug Log &amp; Filters</h3>
+    <p>Live technical log of everything the bridge is doing.</p>
+    <ol>
+      <li>Check <strong>Show Debug Log</strong> to view it inline, or click <strong>Pop Out</strong> for a separate window.</li>
+      <li>Click <strong>Filters</strong> to hide categories you don't need (OSC IN, HANDY OUT, INTIFACE, etc).</li>
+      <li>Use <strong>Pause</strong> to freeze scrolling while you read, and <strong>Clear Log</strong> to reset it.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="licensing">
+    <span class="priority">Account</span>
+    <h3>License &amp; Devices</h3>
+    <p>Each license key can be active on a limited number of devices at once.</p>
+    <ol>
+      <li>Menu bar → <strong>Help → About / License</strong> to check your activation status.</li>
+      <li>If you've replaced or reinstalled a computer and hit your device limit, email <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a> to have a slot freed up.</li>
+    </ol>
+  </div>
+
+</section>
+
+<footer>
+  <p>OSCGetsHandy by Devvious · <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Discord</a> · <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a></p>
+  <p>&copy; 2026 Devvious. Not affiliated with VRChat Inc.</p>
+</footer>
+
+</body>
+</html>
