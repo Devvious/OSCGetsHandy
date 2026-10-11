@@ -11,7 +11,7 @@
 
 <nav>
   <a href="index.html" class="brand">
-    <img src="logo.png" alt="OSCGetsHandy logo" class="logo-mark">
+    <img src="logomark.png" alt="OSCGetsHandy logo" class="logo-mark">
     OSCGetsHandy
   </a>
   <div class="navlinks">
@@ -44,6 +44,11 @@
       <li><a href="#calibration">Calibrate Delay</a></li>
       <li><a href="#debug-log">Debug Log &amp; Filters</a></li>
       <li><a href="#licensing">License &amp; Devices</a></li>
+      <li><a href="#multi-toy">Multi-Toy Support <span class="soon">Soon</span></a></li>
+      <li><a href="#endpoint-snap">Endpoint Snap <span class="soon">Soon</span></a></li>
+      <li><a href="#saved-presets">Saved Presets <span class="soon">Soon</span></a></li>
+      <li><a href="#first-run-tutorial">First-Run Tutorial <span class="soon">Soon</span></a></li>
+      <li><a href="#hide-show">Hide/Show Features <span class="soon">Soon</span></a></li>
     </ol>
   </div>
 
@@ -57,15 +62,16 @@
       <li>Click <strong>Start</strong>. Status should change to "Connected — [your device]".</li>
       <li>In VRChat: Action Menu → Options → OSC → Enable.</li>
     </ol>
-    <div class="tip">If Status gets stuck on "No devices found," make sure Intiface shows your toy as connected before clicking Start in OSCGetsHandy.</div>
+    <div class="tip">OSCGetsHandy advertises itself over OSCQuery, so VRChat finds it automatically — no manual port setup, and no conflicts if you're also running an app like VRCFT. If Status gets stuck on "No devices found," make sure Intiface shows your toy as connected before clicking Start.</div>
   </div>
 
   <div class="guide" id="active-sources">
     <span class="priority">Core</span>
     <h3>Active Sources</h3>
     <p>Controls which SPS parameters (PenOthers, TouchSelf, TouchOthers) the bridge listens to.</p>
+    <div class="gshot"><img src="shot_active_sources.jpg" alt="Active Sources page with built-in source toggles and the Universal Wildcard toggle circled"></div>
     <ol>
-      <li>Open the <strong>Active Sources</strong> section in Settings.</li>
+      <li>Open the <strong>Active Sources</strong> page from the sidebar.</li>
       <li>Check/uncheck each source depending on what you want to trigger movement.</li>
     </ol>
     <div class="tip">Enabling too many sources at once can cause them to fight over the toy's position. Start with one and add more only if needed.</div>
@@ -75,6 +81,7 @@
     <span class="priority">Recommended for Solace</span>
     <h3>Predictive Movement</h3>
     <p>Compensates for hardware delay on toys like the Lovense Solace by learning your stroke pattern and sending it slightly ahead of time.</p>
+    <div class="gshot"><img src="shot_predictive_movement.jpg" alt="Predictive Movement page with the Send Ahead slider circled and a preview graph of received vs sent movement"></div>
     <ol>
       <li>Open <strong>Predictive Movement</strong> and enable it.</li>
       <li>Set <strong>Send Ahead</strong> — use the Calibrate Delay tool below to find your device's exact number, or check the Device Reference Sheet for a starting estimate.</li>
@@ -87,6 +94,7 @@
     <span class="priority">Recommended for Solace</span>
     <h3>Motor Kick-Start</h3>
     <p>Helps toys with slow motor acceleration (e.g. Solace) respond faster right after a direction change.</p>
+    <div class="gshot"><img src="shot_motor_kickstart.jpg" alt="Motor Kick-Start page with the Burst Strength slider circled next to a before/after preview"></div>
     <ol>
       <li>Open <strong>Motor Kick-Start</strong> and enable it.</li>
       <li>Tune <strong>Burst Strength</strong> first — lower value = stronger kick.</li>
@@ -119,6 +127,7 @@
     <span class="priority">Advanced</span>
     <h3>Source Mapping (Custom Sources)</h3>
     <p>Lets you add OSC addresses that aren't part of the default asset.</p>
+    <div class="gshot"><img src="shot_source_mapping.jpg" alt="Source Mapping page listing live-detected OSC addresses with the top one circled"></div>
     <ol>
       <li>Click <strong>Source Mapping</strong> to see every OSC address detected live.</li>
       <li>Click any listed address to add it automatically, or use <strong>+ Add Source</strong> to paste one manually.</li>
@@ -159,9 +168,10 @@
     <span class="priority">Troubleshooting</span>
     <h3>Run Diagnostics</h3>
     <p>A one-click self-check that tells you exactly what's wrong.</p>
+    <div class="gshot"><img src="shot_diagnostics.jpg" alt="Diagnostics page with a failing check highlighted in red"></div>
     <ol>
-      <li>Menu bar → <strong>Help → Run Diagnostics</strong>.</li>
-      <li>Each line shows ✓ or ✗ with a plain-English explanation for anything failing.</li>
+      <li>Open <strong>Diagnostics</strong> from the sidebar.</li>
+      <li>Each line shows ✓, ⚠, or ✕ with a plain-English explanation for anything failing.</li>
       <li>Click <strong>Run Again</strong> after making a change to re-check.</li>
     </ol>
   </div>
@@ -183,9 +193,10 @@
     <span class="priority">Troubleshooting</span>
     <h3>Debug Log &amp; Filters</h3>
     <p>Live technical log of everything the bridge is doing.</p>
+    <div class="gshot"><img src="shot_debug_log.jpg" alt="Debug Log page with category filter pills and the Pop Out button circled"></div>
     <ol>
-      <li>Check <strong>Show Debug Log</strong> to view it inline, or click <strong>Pop Out</strong> for a separate window.</li>
-      <li>Click <strong>Filters</strong> to hide categories you don't need (OSC IN, HANDY OUT, INTIFACE, etc).</li>
+      <li>Open <strong>Debug Log</strong> to view it inline, or click <strong>Pop Out</strong> for a separate window.</li>
+      <li>Click <strong>Filters</strong> to hide categories you don't need (OSC IN, HANDY OUT, INTIFACE, LICENSE, etc).</li>
       <li>Use <strong>Pause</strong> to freeze scrolling while you read, and <strong>Clear Log</strong> to reset it.</li>
     </ol>
   </div>
@@ -198,6 +209,38 @@
       <li>Menu bar → <strong>Help → About / License</strong> to check your activation status.</li>
       <li>If you've replaced or reinstalled a computer and hit your device limit, email <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a> to have a slot freed up.</li>
     </ol>
+  </div>
+
+  <div class="guide" id="multi-toy">
+    <span class="priority">Coming in v3.0.0</span>
+    <h3>Multi-Toy Support</h3>
+    <p>Run more than one device at the same time — e.g. The Handy and a Lovense Solace together — each with its own independent settings and its own bar on the Live Position card.</p>
+    <div class="tip">Not released yet. This guide will fill in with exact steps once v3.0.0 ships — <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">join the Discord</a> for progress updates.</div>
+  </div>
+
+  <div class="guide" id="endpoint-snap">
+    <span class="priority">Coming in v3.0.0</span>
+    <h3>Endpoint Snap</h3>
+    <p>A per-device setting that snaps movement cleanly to the very top and bottom of your configured range, instead of trailing off.</p>
+    <div class="tip">Not released yet — will be overridable per device alongside Boost, Deadzone, Jitter, Invert, Predictive Movement and Kick-Start.</div>
+  </div>
+
+  <div class="guide" id="saved-presets">
+    <span class="priority">Coming in v3.0.0</span>
+    <h3>Saved Presets</h3>
+    <p>Save a full Predictive Movement setup (Send Ahead, tolerances) as a named preset per device, so switching toys doesn't mean re-tuning from scratch.</p>
+  </div>
+
+  <div class="guide" id="first-run-tutorial">
+    <span class="priority">Coming in v3.0.0</span>
+    <h3>First-Run Tutorial</h3>
+    <p>A guided modal walkthrough for new users — including a sound-based source test with three chimes (hold still, interact, done) so headset wearers can find their correct source without needing to look at a screen. Skippable at any time, and replayable later from the Help menu.</p>
+  </div>
+
+  <div class="guide" id="hide-show">
+    <span class="priority">Coming in v3.0.0</span>
+    <h3>Hide/Show Features</h3>
+    <p>A View menu listing every feature and source, with a checkmark next to the ones currently visible — so you can hide anything you don't use and bring it back later.</p>
   </div>
 
 </section>

@@ -12,7 +12,7 @@
 
 <nav>
   <a href="index.html" class="brand">
-    <img src="logo.png" alt="OSCGetsHandy logo" class="logo-mark">
+    <img src="logomark.png" alt="OSCGetsHandy logo" class="logo-mark">
     OSCGetsHandy
   </a>
   <div class="navlinks">
@@ -25,7 +25,7 @@
 </nav>
 
 <header class="hero">
-  <img src="logo.png" alt="OSCGetsHandy logo" style="width:120px;height:120px;border-radius:24px;margin-bottom:24px;">
+  <img src="logomark.png" alt="OSCGetsHandy logo" class="hero-logo">
   <div class="kicker">VRChat &nbsp;→&nbsp; Real Life</div>
   <h1>Make your toys move with <span>VRChat</span></h1>
   <p>OSCGetsHandy bridges VRChat's SPS parameters straight to The Handy, Lovense, and any Buttplug-compatible toy — real-time, low-latency, and built for reliability.</p>
@@ -35,47 +35,155 @@
   </div>
 </header>
 
+<div class="hero-shot">
+  <img src="shot_predictive_movement.jpg" alt="OSCGetsHandy app showing the Predictive Movement feature with live preview graph">
+</div>
+
 <section class="section" id="features">
-  <h2>Features</h2>
-  <div class="subtitle">Everything you need for a smooth, reliable connection.</div>
+  <div class="section-head"><h2>Features</h2></div>
+  <div class="subtitle">Everything you need for a smooth, reliable connection — walked through on the real app screen.</div>
+
+  <div class="feature-row">
+    <div class="ftext">
+      <div class="eyebrow">Latency Compensation</div>
+      <h3>🎯 Predictive Movement</h3>
+      <p>Learns your stroke pattern from the first couple of strokes, then sends it <strong>ahead of time</strong> so devices with real hardware delay — like the Lovense Solace — feel like they're moving in perfect sync.</p>
+      <p>Two tolerance sliders control how fast the prediction adapts when your movement pattern changes, and a built-in Calibration tool measures your exact device delay for you.</p>
+      <a class="readmore" href="guides.html#predictive-movement">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="shot_predictive_movement.jpg" alt="Predictive Movement page with Send Ahead, Size Tolerance and Speed Tolerance sliders circled"></div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="ftext">
+      <div class="eyebrow">Snappier Response</div>
+      <h3>⚡ Motor Kick-Start</h3>
+      <p>Forces a short, strong burst right after every direction change, so toys with slower motor acceleration respond instantly instead of feeling sluggish.</p>
+      <p>Burst Strength and Burst Length are both adjustable so you can dial in exactly how aggressive the kick feels.</p>
+      <a class="readmore" href="guides.html#motor-kick-start">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="shot_motor_kickstart.jpg" alt="Motor Kick-Start page with Burst Strength slider circled and a before/after preview"></div>
+  </div>
+
+  <div class="feature-row">
+    <div class="ftext">
+      <div class="eyebrow">Zero Guesswork</div>
+      <h3>🧩 Source Mapping</h3>
+      <p>No more digging through the Debug Log by hand. This page lists off every OSC address it detects live on your avatar — just click one and it's added to your Active Sources automatically.</p>
+      <p>Add exact addresses or wildcard patterns for avatars with non-standard tag names, and reorder, rename, or remove custom sources anytime.</p>
+      <a class="readmore" href="guides.html#source-mapping">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="shot_source_mapping.jpg" alt="Source Mapping page listing detected OSC addresses, with the top result circled"></div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="ftext">
+      <div class="eyebrow">Troubleshooting</div>
+      <h3>🩺 Built-In Diagnostics</h3>
+      <p>One click runs a full self-check — Intiface connection, device status, VRChat OSC, port conflicts, and active sources — and tells you in plain English exactly what's wrong.</p>
+      <a class="readmore" href="guides.html#diagnostics">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="shot_diagnostics.jpg" alt="Diagnostics page with a failing check circled in red"></div>
+  </div>
+
+  <div class="feature-row">
+    <div class="ftext">
+      <div class="eyebrow">See Everything</div>
+      <h3>📜 Debug Log</h3>
+      <p>A live, color-coded technical feed of everything the bridge is doing — incoming OSC, outgoing toy commands, Intiface acknowledgements, and license heartbeats.</p>
+      <p>Filter by category, pause it to copy text without scroll interference, or pop it out into its own window.</p>
+      <a class="readmore" href="guides.html#debug-log">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="shot_debug_log.jpg" alt="Debug Log page with category filter pills and the Pop Out button circled"></div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="ftext">
+      <div class="eyebrow">Fine Control</div>
+      <h3>🎛️ Active Sources &amp; Universal Wildcard</h3>
+      <p>Toggle the built-in PenOthers, TouchSelf and TouchOthers sources on or off, and turn on Universal Wildcard to make a source accept <em>any</em> matching tag name — not just the default asset's exact one.</p>
+      <a class="readmore" href="guides.html#active-sources">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="shot_active_sources.jpg" alt="Active Sources page with the Universal Wildcard toggle circled"></div>
+  </div>
+
+  <div class="subtitle" style="margin-top:10px;">More features, every one with its own step-by-step guide:</div>
   <div class="grid">
-    <div class="card grad-1">
-      <span class="icon">🎯</span>
-      <h3>Predictive Movement</h3>
-      <p>Learns your stroke pattern and sends it slightly ahead of time to compensate for device latency — great for toys like the Lovense Solace.</p>
-      <a href="guides.html#predictive-movement">Read the guide →</a>
-    </div>
-    <div class="card grad-2">
-      <span class="icon">⚡</span>
-      <h3>Motor Kick-Start</h3>
-      <p>Forces a short burst right after every direction change so toys with slow motor acceleration respond instantly instead of lagging.</p>
-      <a href="guides.html#motor-kick-start">Read the guide →</a>
-    </div>
     <div class="card grad-3">
       <span class="icon">📈</span>
-      <h3>Adaptive Boost</h3>
-      <p>Automatically stretches your current motion range outward, so even small movements can produce full-range response.</p>
+      <h3>Boost</h3>
+      <p>Stretches your current motion range outward, so even small movements produce full-range toy response.</p>
       <a href="guides.html#boost">Read the guide →</a>
     </div>
+    <div class="card grad-6">
+      <span class="icon">🚧</span>
+      <h3>Deadzone Limits</h3>
+      <p>Hard-limits how far the toy is ever allowed to move, no matter what the source sends.</p>
+      <a href="guides.html#deadzone">Read the guide →</a>
+    </div>
+    <div class="card grad-2">
+      <span class="icon">🧹</span>
+      <h3>Jitter Filter</h3>
+      <p>Ignores tiny movements caused by connection noise so the toy doesn't twitch on every packet.</p>
+      <a href="guides.html#jitter">Read the guide →</a>
+    </div>
     <div class="card grad-4">
-      <span class="icon">🧩</span>
-      <h3>Custom Source Mapping</h3>
-      <p>Not using the default asset? Add custom OSC addresses — exact or wildcard — and the bridge will pick them up automatically.</p>
-      <a href="guides.html#source-mapping">Read the guide →</a>
+      <span class="icon">🔄</span>
+      <h3>Invert Position</h3>
+      <p>Flips the position output for devices that are physically mounted or held upside down.</p>
+      <a href="guides.html#invert">Read the guide →</a>
     </div>
     <div class="card grad-5">
       <span class="icon">🛰️</span>
-      <h3>Auto-Discovery</h3>
-      <p>Advertises itself over OSCQuery so VRChat finds it automatically — no manual port configuration, no conflicts with other OSC apps.</p>
-      <a href="guides.html#auto-discovery">Read the guide →</a>
+      <h3>Auto-Discovery (OSCQuery)</h3>
+      <p>Advertises itself over OSCQuery so VRChat finds it automatically — no manual ports, no conflicts with apps like VRCFT.</p>
+      <a href="guides.html#getting-started">Read the guide →</a>
     </div>
-    <div class="card grad-6">
-      <span class="icon">🩺</span>
-      <h3>Built-In Diagnostics</h3>
-      <p>One-click self-check that tells you exactly what's wrong if something isn't connecting — no guesswork.</p>
-      <a href="guides.html#diagnostics">Read the guide →</a>
+    <div class="card grad-7">
+      <span class="icon">⏱️</span>
+      <h3>Delay Calibration</h3>
+      <p>Measures your exact device's real-world delay using the OSC Simulator, for use with Predictive Movement.</p>
+      <a href="guides.html#calibration">Read the guide →</a>
     </div>
   </div>
+</section>
+
+<section class="section" id="multitoy">
+  <div class="section-head"><h2>What's Coming in v3.0.0<span class="soon">In Development</span></h2></div>
+  <div class="subtitle">A full rebuild — new look, multiple toys at once, and a smarter first run. Not released yet.</div>
+  <div class="grid">
+    <div class="card grad-5">
+      <span class="icon">🧷</span>
+      <h3>Multi-Toy Support</h3>
+      <p>Run The Handy and a Lovense device (or more) at the same time, each with its own settings and its own live position bar.</p>
+    </div>
+    <div class="card grad-8">
+      <span class="icon">🎯</span>
+      <h3>Endpoint Snap</h3>
+      <p>Per-device setting that snaps movement cleanly to the very top and bottom of your range.</p>
+    </div>
+    <div class="card grad-1">
+      <span class="icon">🎓</span>
+      <h3>First-Run Tutorial</h3>
+      <p>A guided walkthrough with a sound-based source test — tap along to three chimes and OSCGetsHandy finds your source for you.</p>
+    </div>
+    <div class="card grad-3">
+      <span class="icon">💾</span>
+      <h3>Saved Presets</h3>
+      <p>Save Predictive Movement presets per device, so switching toys doesn't mean re-tuning from scratch.</p>
+    </div>
+    <div class="card grad-2">
+      <span class="icon">✨</span>
+      <h3>All-New Interface</h3>
+      <p>A completely rebuilt, bubblier interface with a collapsible sidebar — shown throughout this page is the real in-progress design.</p>
+    </div>
+    <div class="card grad-6">
+      <span class="icon">👁️</span>
+      <h3>Feature Hide/Show</h3>
+      <p>Hide the features and sources you don't use from the menu, and bring them back anytime.</p>
+    </div>
+  </div>
+  <div class="note">Want a look at what's next after that? <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Join the Discord</a> — that's where it's announced first.</div>
 </section>
 
 <section class="section" id="compatibility">
