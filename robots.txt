@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devvious.github.io/OSCGetsHandy/sitemap.xml
