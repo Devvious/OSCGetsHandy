@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="google-site-verification" content="uTS2OblTlIvFcckQAsPYQFG1Yxoi6yd62B6ykbO2mVI" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OSCGetsHandy — VRChat OSC to Toy Bridge</title>
-<meta name="description" content="Connect VRChat SPS to The Handy, Lovense, and other Buttplug-compatible toys.">
-<meta name="google-site-verification" content="uTS2OblTlIvFcckQAsPYQFG1Yxoi6yd62B6ykbO2mVI" />
+<meta name="description" content="Connect VRChat SPS/OGB to The Handy, Lovense and any Buttplug-compatible toy. Auto source finder, multi-toy support, Predictive Movement, macros, character profiles and more.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,7 @@
     <a href="guides.html">How-To Guides</a>
     <a href="updates.html">Updates</a>
     <a href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener">Discord</a>
-    <a class="cta" href="#buy">Get It</a>
+    <a class="cta" href="index.html#buy">Get It</a>
   </div>
 </nav>
 
@@ -29,7 +29,7 @@
   <img src="logomark.png" alt="OSCGetsHandy logo" class="hero-logo">
   <div class="kicker">VRChat &nbsp;→&nbsp; Real Life</div>
   <h1>Make your toys move with <span>VRChat</span></h1>
-  <p>OSCGetsHandy bridges VRChat's SPS parameters straight to The Handy, Lovense, and any Buttplug-compatible toy — real-time, low-latency, and built for reliability.</p>
+  <p>OSCGetsHandy bridges VRChat's SPS / OGB parameters straight to The Handy, Lovense, and any Buttplug-compatible toy — real-time, low-latency, and built for reliability.</p>
   <div class="hero-btns">
     <a class="btn btn-primary" href="#buy">Get OSCGetsHandy</a>
     <a class="btn btn-secondary" href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener">Join the Discord</a>
@@ -37,158 +37,172 @@
 </header>
 
 <div class="hero-shot">
-  <img src="shot_predictive_movement.jpg" alt="OSCGetsHandy app showing the Predictive Movement feature with live preview graph">
+  <img src="img/app_hero.jpg" alt="The OSCGetsHandy app showing the Live Handy Position page with a moving position graph" width="1650" height="1200">
 </div>
 
 <section class="section" id="features">
   <div class="section-head"><h2>Features</h2></div>
-  <div class="subtitle">Everything you need for a smooth, reliable connection — walked through on the real app screen.</div>
-
-  <div class="feature-row">
-    <div class="ftext">
-      <div class="eyebrow">Latency Compensation</div>
-      <h3>🎯 Predictive Movement</h3>
-      <p>Learns your stroke pattern from the first couple of strokes, then sends it <strong>ahead of time</strong> so devices with real hardware delay — like the Lovense Solace — feel like they're moving in perfect sync.</p>
-      <p>Two tolerance sliders control how fast the prediction adapts when your movement pattern changes, and a built-in Calibration tool measures your exact device delay for you.</p>
-      <a class="readmore" href="guides.html#predictive-movement">Read the full guide →</a>
-    </div>
-    <div class="fshot"><img src="shot_predictive_movement.jpg" alt="Predictive Movement page with Send Ahead, Size Tolerance and Speed Tolerance sliders circled"></div>
-  </div>
-
-  <div class="feature-row reverse">
-    <div class="ftext">
-      <div class="eyebrow">Snappier Response</div>
-      <h3>⚡ Motor Kick-Start</h3>
-      <p>Forces a short, strong burst right after every direction change, so toys with slower motor acceleration respond instantly instead of feeling sluggish.</p>
-      <p>Burst Strength and Burst Length are both adjustable so you can dial in exactly how aggressive the kick feels.</p>
-      <a class="readmore" href="guides.html#motor-kick-start">Read the full guide →</a>
-    </div>
-    <div class="fshot"><img src="shot_motor_kickstart.jpg" alt="Motor Kick-Start page with Burst Strength slider circled and a before/after preview"></div>
-  </div>
+  <div class="subtitle">Everything you need for a smooth, reliable connection — shown on the real app, with the important spots circled.</div>
 
   <div class="feature-row">
     <div class="ftext">
       <div class="eyebrow">Zero Guesswork</div>
-      <h3>🧩 Source Mapping</h3>
-      <p>No more digging through the Debug Log by hand. This page lists off every OSC address it detects live on your avatar — just click one and it's added to your Active Sources automatically.</p>
-      <p>Add exact addresses or wildcard patterns for avatars with non-standard tag names, and reorder, rename, or remove custom sources anytime.</p>
-      <a class="readmore" href="guides.html#source-mapping">Read the full guide →</a>
+      <h3>🔎 Find Source (Auto)</h3>
+      <p>Not sure which VRChat signal should control your toy? Press <strong>Start Test</strong> and listen for three chimes — hold still, touch it, finished — and OSCGetsHandy lists the signals that moved <em>only</em> while you were touching, best match first. It works with your headset on.</p>
+      <a class="readmore" href="guides.html#find-source">Read the full guide →</a>
     </div>
-    <div class="fshot"><img src="shot_source_mapping.jpg" alt="Source Mapping page listing detected OSC addresses, with the top result circled"></div>
+    <div class="fshot"><img src="img/find_source_results.jpg" alt="Find Source (Auto) results with the best match and its Add button circled in red" width="1650" height="1200" loading="lazy"></div>
   </div>
-
-  <div class="feature-row reverse">
-    <div class="ftext">
-      <div class="eyebrow">Troubleshooting</div>
-      <h3>🩺 Built-In Diagnostics</h3>
-      <p>One click runs a full self-check — Intiface connection, device status, VRChat OSC, port conflicts, and active sources — and tells you in plain English exactly what's wrong.</p>
-      <a class="readmore" href="guides.html#diagnostics">Read the full guide →</a>
-    </div>
-    <div class="fshot"><img src="shot_diagnostics.jpg" alt="Diagnostics page with a failing check circled in red"></div>
-  </div>
-
-  <div class="feature-row">
-    <div class="ftext">
-      <div class="eyebrow">See Everything</div>
-      <h3>📜 Debug Log</h3>
-      <p>A live, color-coded technical feed of everything the bridge is doing — incoming OSC, outgoing toy commands, Intiface acknowledgements, and license heartbeats.</p>
-      <p>Filter by category, pause it to copy text without scroll interference, or pop it out into its own window.</p>
-      <a class="readmore" href="guides.html#debug-log">Read the full guide →</a>
-    </div>
-    <div class="fshot"><img src="shot_debug_log.jpg" alt="Debug Log page with category filter pills and the Pop Out button circled"></div>
-  </div>
-
   <div class="feature-row reverse">
     <div class="ftext">
       <div class="eyebrow">Fine Control</div>
-      <h3>🎛️ Active Sources &amp; Universal Wildcard</h3>
-      <p>Toggle the built-in PenOthers, TouchSelf and TouchOthers sources on or off, and turn on Universal Wildcard to make a source accept <em>any</em> matching tag name — not just the default asset's exact one.</p>
+      <h3>🎛️ Active Sources</h3>
+      <p><strong>All PenOthers</strong>, <strong>All TouchSelf</strong> and <strong>All TouchOthers</strong> work with any avatar, whatever its parts are named — no setup.</p>
+      <p>Need something else? Add your own from the Sources list, the full Parameter list, or by hand (exact or wildcard). Drag to set priority, and the app warns you if several sources are on at once.</p>
       <a class="readmore" href="guides.html#active-sources">Read the full guide →</a>
     </div>
-    <div class="fshot"><img src="shot_active_sources.jpg" alt="Active Sources page with the Universal Wildcard toggle circled"></div>
+    <div class="fshot"><img src="img/active_sources.jpg" alt="Active Sources page with the built-in sources boxed and the custom source buttons circled" width="1650" height="1020" loading="lazy"></div>
+  </div>
+  <div class="feature-row">
+    <div class="ftext">
+      <div class="eyebrow">Multiple Devices</div>
+      <h3>🧷 Multi-Toy Support</h3>
+      <p>Connect The Handy and a Lovense device (or more) at the same time. The ★ Default toy follows the main window; click any other toy to give it its own Boost, Deadzone, Jitter and Predictive Movement settings — and choose which sources move it.</p>
+      <p>Every connected toy gets its own live position bar.</p>
+      <a class="readmore" href="guides.html#multi-toy">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="img/multitoy.jpg" alt="Live Handy Position page showing two connected toys, each with its own bar and graph, and the Connected Toys list boxed" width="1650" height="1350" loading="lazy"></div>
+  </div>
+  <div class="feature-row reverse">
+    <div class="ftext">
+      <div class="eyebrow">Latency Compensation</div>
+      <h3>🎯 Predictive Movement</h3>
+      <p>Learns the rhythm of your strokes, then sends each move slightly <strong>early</strong> so devices that react late — like the Lovense Solace — line up with what you see in VRChat.</p>
+      <p>Measure your toy's exact delay with <strong>Calibrate Delay</strong> using VRChat's crouch toggle, and save your settings as named presets per toy.</p>
+      <a class="readmore" href="guides.html#predictive-movement">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="img/predictive.jpg" alt="Predictive Movement page with the Enabled switch, Send ahead by slider and Saved Presets circled in red" width="1650" height="1380" loading="lazy"></div>
+  </div>
+  <div class="feature-row">
+    <div class="ftext">
+      <div class="eyebrow">Automation</div>
+      <h3>⌘ Macro Switch</h3>
+      <p>Let something you do in VRChat change a setting in the app. Flip a toggle in your avatar menu to turn Preset Strokes on, raise Boost, flip Invert, or load a different Character Profile.</p>
+      <a class="readmore" href="guides.html#macro-switch">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="img/macro_switch.jpg" alt="Macro Switch page listing three macros, with Add Macro circled" width="1650" height="1350" loading="lazy"></div>
+  </div>
+  <div class="feature-row reverse">
+    <div class="ftext">
+      <div class="eyebrow">Per-Avatar Settings</div>
+      <h3>🎭 Character Profiles</h3>
+      <p>A profile remembers all your settings — Boost, Deadzone, Predictive Movement, sources and more — for one avatar. Turn on <strong>Profile Auto-Switch</strong> and the right profile loads by itself whenever you change into that avatar.</p>
+      <a class="readmore" href="guides.html#profiles">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="img/profiles_menu.jpg" alt="Character Profiles menu with Create New Profile and Profile Auto-Switch circled" width="1650" height="1350" loading="lazy"></div>
+  </div>
+  <div class="feature-row">
+    <div class="ftext">
+      <div class="eyebrow">Troubleshooting</div>
+      <h3>🩺 Troubleshooter</h3>
+      <p>One click checks your license, Intiface, your toy and what VRChat is actually sending — step by step, in plain English — with the likely cause and the exact fix right under anything that's wrong. Copy the report and send it to support if you're still stuck.</p>
+      <a class="readmore" href="guides.html#troubleshooter">Read the full guide →</a>
+    </div>
+    <div class="fshot"><img src="img/troubleshooter.jpg" alt="Troubleshooter window with a failing Toy check circled in red and the Copy Report button circled" width="1650" height="1500" loading="lazy"></div>
   </div>
 
-  <div class="subtitle" style="margin-top:10px;">More features, every one with its own step-by-step guide:</div>
+  <div class="section-head" style="margin-top:20px;"><h2>And So Much More</h2></div>
+  <div class="subtitle">Every feature has its own step-by-step guide.</div>
   <div class="grid">
     <div class="card grad-3">
       <span class="icon">📈</span>
       <h3>Boost</h3>
-      <p>Stretches your current motion range outward, so even small movements produce full-range toy response.</p>
+      <p>Learns the range you've been using and stretches it, so small movements still give full strokes.</p>
       <a href="guides.html#boost">Read the guide →</a>
     </div>
     <div class="card grad-6">
       <span class="icon">🚧</span>
       <h3>Deadzone Limits</h3>
-      <p>Hard-limits how far the toy is ever allowed to move, no matter what the source sends.</p>
+      <p>Sets the lowest and highest point the toy is ever allowed to reach.</p>
       <a href="guides.html#deadzone">Read the guide →</a>
     </div>
     <div class="card grad-2">
       <span class="icon">🧹</span>
       <h3>Jitter Filter</h3>
-      <p>Ignores tiny movements caused by connection noise so the toy doesn't twitch on every packet.</p>
+      <p>Ignores tiny wobbles in VRChat's signal so the toy doesn't twitch when it should be still.</p>
       <a href="guides.html#jitter">Read the guide →</a>
     </div>
+    <div class="card grad-1">
+      <span class="icon">⚡</span>
+      <h3>Motor Kick-Start</h3>
+      <p>Extra speed right after each direction change, for speed-controlled toys with slow motors.</p>
+      <a href="guides.html#motor-kick-start">Read the guide →</a>
+    </div>
+    <div class="card grad-8">
+      <span class="icon">⌖</span>
+      <h3>Endpoint Snap</h3>
+      <p>Sends positions close to the very top or bottom the whole way, so strokes actually reach the ends.</p>
+      <a href="guides.html#endpoint-snap">Read the guide →</a>
+    </div>
     <div class="card grad-4">
-      <span class="icon">🔄</span>
-      <h3>Invert Position</h3>
-      <p>Flips the position output for devices that are physically mounted or held upside down.</p>
-      <a href="guides.html#invert">Read the guide →</a>
+      <span class="icon">∿</span>
+      <h3>Preset Strokes</h3>
+      <p>A steady up-and-down motion while a source is active — perfect for vibration-only signals.</p>
+      <a href="guides.html#preset-strokes">Read the guide →</a>
+    </div>
+    <div class="card grad-7">
+      <span class="icon">✦</span>
+      <h3>Activated Source Switch <span class="tag">Experimental</span></h3>
+      <p>Use a gesture in VRChat, like sitting five times, to lock the toy onto the source you're really touching.</p>
+      <a href="guides.html#activated-source-switch">Read the guide →</a>
+    </div>
+    <div class="card grad-5">
+      <span class="icon">🎓</span>
+      <h3>First-Run Tutorial</h3>
+      <p>A guided walkthrough that connects your toy and finds your source. Skip any time, replay from Help.</p>
+      <a href="guides.html#first-run-tutorial">Read the guide →</a>
+    </div>
+    <div class="card grad-3">
+      <span class="icon">📜</span>
+      <h3>Debug Log</h3>
+      <p>A live, filterable feed of every signal and command, saved automatically so you can send it to support.</p>
+      <a href="guides.html#debug-log">Read the guide →</a>
+    </div>
+    <div class="card grad-6">
+      <span class="icon">👁️</span>
+      <h3>Hide, Show &amp; Reorder</h3>
+      <p>Hide the pages you never use and drag the rest into the order you like from the View menu.</p>
+      <a href="guides.html#hide-show">Read the guide →</a>
+    </div>
+    <div class="card grad-2">
+      <span class="icon">📤</span>
+      <h3>Export OSC Session Log</h3>
+      <p>Save everything from a session as a CSV file — handy for support.</p>
+      <a href="guides.html#session-log">Read the guide →</a>
+    </div>
+    <div class="card grad-4">
+      <span class="icon">📱</span>
+      <h3>Intiface on Your Phone</h3>
+      <p>Using Intiface on another device? Type its address in Settings and you're connected.</p>
+      <a href="guides.html#settings">Read the guide →</a>
     </div>
     <div class="card grad-5">
       <span class="icon">🛰️</span>
       <h3>Auto-Discovery (OSCQuery)</h3>
-      <p>Advertises itself over OSCQuery so VRChat finds it automatically — no manual ports, no conflicts with apps like VRCFT.</p>
+      <p>VRChat finds OSCGetsHandy by itself — no manual ports, and no clashes with apps like VRCFT.</p>
       <a href="guides.html#getting-started">Read the guide →</a>
     </div>
-    <div class="card grad-7">
-      <span class="icon">⏱️</span>
-      <h3>Delay Calibration</h3>
-      <p>Measures your exact device's real-world delay using the OSC Simulator, for use with Predictive Movement.</p>
-      <a href="guides.html#calibration">Read the guide →</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="multitoy">
-  <div class="section-head"><h2>What's Coming in v3.0.0<span class="soon">In Development</span></h2></div>
-  <div class="subtitle">A full rebuild — new look, multiple toys at once, and a smarter first run. Not released yet.</div>
-  <div class="grid">
-    <div class="card grad-5">
-      <span class="icon">🧷</span>
-      <h3>Multi-Toy Support</h3>
-      <p>Run The Handy and a Lovense device (or more) at the same time, each with its own settings and its own live position bar.</p>
-    </div>
     <div class="card grad-8">
-      <span class="icon">🎯</span>
-      <h3>Endpoint Snap</h3>
-      <p>Per-device setting that snaps movement cleanly to the very top and bottom of your range.</p>
-    </div>
-    <div class="card grad-1">
-      <span class="icon">🎓</span>
-      <h3>First-Run Tutorial</h3>
-      <p>A guided walkthrough with a sound-based source test — tap along to three chimes and OSCGetsHandy finds your source for you.</p>
-    </div>
-    <div class="card grad-3">
-      <span class="icon">💾</span>
-      <h3>Saved Presets</h3>
-      <p>Save Predictive Movement presets per device, so switching toys doesn't mean re-tuning from scratch.</p>
-    </div>
-    <div class="card grad-2">
-      <span class="icon">✨</span>
-      <h3>All-New Interface</h3>
-      <p>A completely rebuilt, bubblier interface with a collapsible sidebar — shown throughout this page is the real in-progress design.</p>
-    </div>
-    <div class="card grad-6">
-      <span class="icon">👁️</span>
-      <h3>Feature Hide/Show</h3>
-      <p>Hide the features and sources you don't use from the menu, and bring them back anytime.</p>
+      <span class="icon">🔄</span>
+      <h3>Invert</h3>
+      <p>Flips the direction for toys that are held or mounted the other way around.</p>
+      <a href="guides.html#invert">Read the guide →</a>
     </div>
   </div>
-  <div class="note">Want a look at what's next after that? <a href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener">Join the Discord</a> — that's where it's announced first.</div>
 </section>
 
 <section class="section" id="compatibility">
-  <h2>Compatibility</h2>
+  <div class="section-head"><h2>Compatibility</h2></div>
   <div class="subtitle">Works with any device supported by Intiface / Buttplug.</div>
   <div class="compat">
     <span class="pill">The Handy</span>
@@ -196,12 +210,12 @@
     <span class="pill">Lovense Toys</span>
     <span class="pill">Any Buttplug-Compatible Device</span>
   </div>
-  <div class="note">Requires <a href="https://intiface.com/central/" target="_blank" rel="noopener">Intiface Central</a> running in the background to talk to your device.</div>
+  <div class="note">Runs on Windows 10 / 11 and needs <a href="https://intiface.com/central/" target="_blank" rel="noopener">Intiface Central</a> running in the background to talk to your device. Intiface on your phone works too.</div>
 </section>
 
 <section class="section" id="how-it-works">
-  <h2>How It Works</h2>
-  <div class="subtitle">Three steps and you're moving. Full details in the <a href="guides.html">guides</a>.</div>
+  <div class="section-head"><h2>How It Works</h2></div>
+  <div class="subtitle">Four steps and you're moving. Full details in the <a href="guides.html">guides</a>.</div>
   <div class="steps">
     <div class="step">
       <div class="num">1</div>
@@ -214,17 +228,25 @@
       <div class="num">2</div>
       <div>
         <h4>Connect your toy</h4>
-        <p>Open Intiface Central, turn on your device, and let it connect. OSCGetsHandy finds it automatically.</p>
+        <p>Open Intiface Central, turn on your device, then press <strong>Start</strong>. OSCGetsHandy finds it automatically.</p>
       </div>
     </div>
     <div class="step">
       <div class="num">3</div>
       <div>
         <h4>Enable OSC in VRChat</h4>
-        <p>Action Menu → Options → OSC → Enable. That's it — your toy now follows your avatar in real time.</p>
+        <p>Action Menu → Options → OSC → Enabled. VRChat discovers OSCGetsHandy on its own.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <div>
+        <h4>Find your source</h4>
+        <p>Use <strong>Find Source (Auto)</strong> or the first-run tutorial to pick the signal that should move your toy — your avatar now drives it in real time.</p>
       </div>
     </div>
   </div>
+  <div class="note">What's new? See the latest release notes on the <a href="updates.html">Updates page</a>.</div>
 </section>
 
 <div class="cta-band" id="buy">

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How-To Guides — OSCGetsHandy</title>
-<meta name="description" content="Step-by-step OSCGetsHandy guides for every feature: Predictive Movement, Motor Kick-Start, Source Mapping, Diagnostics and more.">
+<meta name="description" content="Step-by-step OSCGetsHandy guides for every feature: Find Source (Auto), Active Sources, Predictive Movement, Multi-Toy, Macros, Character Profiles, the Troubleshooter and more.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -26,222 +26,329 @@
 
 <section class="section">
   <div class="section-head"><h2>How-To Guides</h2></div>
-  <div class="subtitle">Every feature, explained step by step — ordered from most to least important.</div>
+  <div class="subtitle">Every feature, explained step by step — ordered from most to least important. Screenshots are from the real app with the key spots circled.</div>
 
   <div class="guide-toc">
     <h4>Jump to a guide</h4>
     <ol>
-      <li><a href="#getting-started">Getting Started (Install, License, First Connection)</a></li>
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#first-run-tutorial">First-Run Tutorial</a></li>
       <li><a href="#active-sources">Active Sources</a></li>
+      <li><a href="#find-source">Find Source (Auto)</a></li>
+      <li><a href="#custom-sources">Adding Custom Sources</a></li>
       <li><a href="#predictive-movement">Predictive Movement</a></li>
+      <li><a href="#calibration">Calibrate Delay</a></li>
       <li><a href="#motor-kick-start">Motor Kick-Start</a></li>
+      <li><a href="#multi-toy">Multi-Toy Support</a></li>
+      <li><a href="#troubleshooter">Troubleshooter</a></li>
       <li><a href="#boost">Boost</a></li>
       <li><a href="#deadzone">Deadzone Limits</a></li>
-      <li><a href="#source-mapping">Source Mapping (Custom Sources)</a></li>
-      <li><a href="#universal-wildcard">Universal Wildcard</a></li>
       <li><a href="#jitter">Jitter Filter</a></li>
-      <li><a href="#invert">Invert Position</a></li>
-      <li><a href="#diagnostics">Run Diagnostics</a></li>
-      <li><a href="#calibration">Calibrate Delay</a></li>
+      <li><a href="#endpoint-snap">Endpoint Snap</a></li>
+      <li><a href="#invert">Invert</a></li>
+      <li><a href="#profiles">Character Profiles</a></li>
+      <li><a href="#macro-switch">Macro Switch</a></li>
+      <li><a href="#preset-strokes">Preset Strokes</a></li>
+      <li><a href="#activated-source-switch">Activated Source Switch</a></li>
       <li><a href="#debug-log">Debug Log &amp; Filters</a></li>
+      <li><a href="#session-log">Export OSC Session Log</a></li>
+      <li><a href="#hide-show">Hide, Show &amp; Reorder Pages</a></li>
+      <li><a href="#settings">Settings</a></li>
       <li><a href="#licensing">License &amp; Devices</a></li>
-      <li><a href="#multi-toy">Multi-Toy Support <span class="soon">Soon</span></a></li>
-      <li><a href="#endpoint-snap">Endpoint Snap <span class="soon">Soon</span></a></li>
-      <li><a href="#saved-presets">Saved Presets <span class="soon">Soon</span></a></li>
-      <li><a href="#first-run-tutorial">First-Run Tutorial <span class="soon">Soon</span></a></li>
-      <li><a href="#hide-show">Hide/Show Features <span class="soon">Soon</span></a></li>
     </ol>
   </div>
 
   <div class="guide" id="getting-started">
     <span class="priority">Start Here</span>
     <h3>Getting Started</h3>
-    <ol>
+    <p>From purchase to a moving toy in a few minutes. OSCGetsHandy runs on Windows 10 / 11.</p>
+    <figure class="gshot"><img src="img/getting_started.jpg" alt="OSCGetsHandy with the Start button and the Connected status circled in red" width="1650" height="1200" loading="lazy"><figcaption>Press Start, then wait for the status to say “Connected”.</figcaption></figure><ol>
       <li>Purchase on <a href="https://payhip.com/b/lFIj0" target="_blank" rel="noopener">Payhip</a> — your license key arrives by email.</li>
-      <li>Install and open <a href="https://intiface.com/central/" target="_blank" rel="noopener">Intiface Central</a>, turn your toy on, and let it connect there first.</li>
-      <li>Run OSCGetsHandy. Enter your license key and the email you purchased with.</li>
-      <li>Click <strong>Start</strong>. Status should change to "Connected — [your device]".</li>
-      <li>In VRChat: Action Menu → Options → OSC → Enable.</li>
-    </ol>
-    <div class="tip">OSCGetsHandy advertises itself over OSCQuery, so VRChat finds it automatically — no manual port setup, and no conflicts if you're also running an app like VRCFT. If Status gets stuck on "No devices found," make sure Intiface shows your toy as connected before clicking Start.</div>
+      <li>Install and open <a href="https://intiface.com/central/" target="_blank" rel="noopener">Intiface Central</a>, start its server, and make sure your toy shows as <strong>Connected</strong> inside it.</li>
+      <li>Run OSCGetsHandy and enter your license key and the email you purchased with (see <a href="#licensing">License &amp; Devices</a>).</li>
+      <li>In VRChat: <strong>Action Menu → Options → OSC → Enabled</strong>.</li>
+      <li>In OSCGetsHandy press <strong>Start</strong>. The status under the buttons should change to <strong>Connected — [your device]</strong>.</li>
+      <li>Pick the VRChat signal that moves your toy with <a href="#find-source">Find Source (Auto)</a>, or just follow the <a href="#first-run-tutorial">first-run tutorial</a>.</li>
+    </ol><div class="tip">OSCGetsHandy advertises itself over OSCQuery, so VRChat finds it automatically — no manual port setup, and no clashes if you also run an app like VRCFT. If the status says <strong>No devices found</strong>, Intiface is open but your toy isn't connected inside it. <strong>Disconnected, retrying</strong> means the app can't reach Intiface — check that Intiface Central is open and its server is started. Still stuck? Use <a href="#troubleshooter">Help → Troubleshooter</a>.</div><div class="tip">Closing the window asks whether to keep OSCGetsHandy running in the background (system tray). Don't run two copies at once — the app warns you if you try.</div>
   </div>
 
-  <div class="guide" id="active-sources">
+  <div class="guide" id="first-run-tutorial">
+    <span class="priority">Start Here</span>
+    <h3>First-Run Tutorial</h3>
+    <p>A short guided walkthrough that opens the first time you launch the app: Welcome, Before You Start, Connect, Find Your Source, Jitter Filter, Predictive Movement and Motor Kick-Start.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/tutorial_welcome.jpg" alt="The first step of the OSCGetsHandy tutorial, Welcome" width="1650" height="1350" loading="lazy"></figure><figure class="gshot"><img src="img/tutorial_find.jpg" alt="The Find Your Source step of the tutorial listing the three built-in sources" width="1650" height="1350" loading="lazy"></figure></div><ol>
+      <li>Follow the steps and press <strong>Next</strong>. Look for the <strong>[?]</strong> boxes if you want more detail.</li>
+      <li>Use <strong>Skip Tutorial</strong> at any time to stop.</li>
+      <li><strong>Handy users</strong> can skip the toy-specific steps — The Handy works well with the default settings. Lovense and other toys continue through them.</li>
+      <li>To play it again later: <strong>Help → Restart Tutorial</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="active-sources"><span id="universal-wildcard"></span>
     <span class="priority">Core</span>
     <h3>Active Sources</h3>
-    <p>Controls which SPS parameters (PenOthers, TouchSelf, TouchOthers) the bridge listens to.</p>
-    <div class="gshot"><img src="shot_active_sources.jpg" alt="Active Sources page with built-in source toggles and the Universal Wildcard toggle circled"></div>
-    <ol>
-      <li>Open the <strong>Active Sources</strong> page from the sidebar.</li>
-      <li>Check/uncheck each source depending on what you want to trigger movement.</li>
-    </ol>
-    <div class="tip">Enabling too many sources at once can cause them to fight over the toy's position. Start with one and add more only if needed.</div>
+    <p>A <em>source</em> is a signal from your avatar that tells the toy how deep to go. VRChat sends lots of these all the time (they're called parameters) — here you choose which ones the toy follows.</p>
+    <figure class="gshot"><img src="img/active_sources.jpg" alt="Active Sources page with the Built-in card boxed and the Find source, Keywords buttons circled" width="1650" height="1020" loading="lazy"><figcaption>Built-in sources on top, your custom sources underneath.</figcaption></figure><ol>
+      <li>Open <strong>Active Sources</strong> from the sidebar.</li>
+      <li>Under <strong>Built-in</strong>, switch on what you want: <strong>All PenOthers</strong> (how deep your avatar is inside someone else), <strong>All TouchSelf</strong> (you touching your own avatar, e.g. with your hand) or <strong>All TouchOthers</strong> (someone else touching you).</li>
+      <li>The number on the right of each row is its live value — 0.00 is nothing, 1.00 is fully in or fully touched. Watch it move to confirm the signal is arriving.</li>
+      <li>Need another signal? Add a custom one — see <a href="#find-source">Find Source (Auto)</a> and <a href="#custom-sources">Adding Custom Sources</a>.</li>
+      <li>Custom sources can be switched on/off with their toggle, <strong>dragged</strong> (or moved with ▲ ▼) to change priority, renamed with ✎ and removed with ✕.</li>
+    </ol><h4 id="source-priority">Only one source at a time</h4>
+    <p>It works best with <strong>only 1 source on</strong>. If several are on and more than one is active at the same moment, the toy follows only the one highest on the page: <strong>All PenOthers</strong>, then <strong>All TouchOthers</strong>, then <strong>All TouchSelf</strong>, then your custom sources from top to bottom. The Debug Log shows a “Now following” line when it switches.</p>
+    <figure class="gshot"><img src="img/notice_multisource.jpg" alt="The More than one source is on pop-up listing sources in priority order" width="1650" height="1350" loading="lazy"><figcaption>A pop-up warns you when you press Start, or switch on another source, with several on.</figcaption></figure><div class="tip">Built-in sources work with <em>any</em> avatar, whatever its parts are named, so there's no setup. If two matching parts on one avatar are active at the same time, the newest signal wins and the toy can jitter — keep just one part active.</div>
+  </div>
+
+  <div class="guide" id="find-source">
+    <span class="priority">Core</span>
+    <h3>Find Source (Auto)</h3>
+    <p>Not sure which signal controls your toy? The app can find it for you — and it works with your headset on, because it talks to you with chimes.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/find_source_intro.jpg" alt="Find Source (Auto) introduction with the wait slider and Start Test button circled" width="1650" height="1200" loading="lazy"><figcaption>Turn your sound on and press Start Test.</figcaption></figure><figure class="gshot"><img src="img/find_source_results.jpg" alt="Find Source (Auto) results listing three possible matches with the first Add button circled" width="1650" height="1200" loading="lazy"><figcaption>Best matches first — click Add on the right one.</figcaption></figure></div><ol>
+      <li>Press <strong>Start</strong> in the main window and make sure OSC is on in VRChat — the app has to be running or nothing can be detected.</li>
+      <li>Go to <strong>Active Sources</strong> and click <strong>Find source (auto)</strong>.</li>
+      <li>Turn your sound on. Use the <strong>Wait before the first chime</strong> slider to give yourself time to get into position, then press <strong>Start Test</strong>.</li>
+      <li><strong>1st chime:</strong> hold still, with the source off. <strong>2nd chime:</strong> turn your source on and keep touching it in a steady back-and-forth motion. <strong>3rd chime:</strong> finished.</li>
+      <li>The app lists the signals that moved <em>only</em> while you were touching, best match first. A ✓ <strong>keyword match</strong> means its name also looks like a depth signal — a good sign. Click <strong>Add</strong> next to the one that matches what you touched.</li>
+    </ol><div class="tip"><strong>No clear match?</strong> Check the app is running and OSC is on; use a steady back-and-forth motion, not quick taps; try <strong>Longer touch (20s)</strong>; and remember sources you've already added are hidden. If your avatar was just uploaded or changed, reset VRChat's OSC config (<strong>Action Menu → Options → OSC → Reset Config</strong>) and reload it.</div>
+  </div>
+
+  <div class="guide" id="custom-sources"><span id="source-mapping"></span>
+    <span class="priority">Core</span>
+    <h3>Adding Custom Sources</h3>
+    <p>Four ways to add a signal that isn't one of the three built-in ones. All live on the <strong>Active Sources</strong> page.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/sources_list.jpg" alt="Pick a Source to Add window with the first likely stroke signal circled" width="1650" height="1200" loading="lazy"><figcaption>+ Sources list</figcaption></figure><figure class="gshot"><img src="img/param_list.jpg" alt="All Avatar Parameters window with sort options and a ticked row circled" width="1650" height="1200" loading="lazy"><figcaption>Parameter list</figcaption></figure><figure class="gshot"><img src="img/add_manually.jpg" alt="Add Manually window with the Wildcard option selected and an address typed in" width="1650" height="1200" loading="lazy"><figcaption>+ Add manually</figcaption></figure><figure class="gshot"><img src="img/keywords.jpg" alt="Keywords window showing Likely and Not Likely keyword lists" width="1650" height="1200" loading="lazy"><figcaption>Keywords</figcaption></figure></div><h4>+ Sources list</h4>
+    <p>Click <strong>+ Sources list</strong>. Signals are sorted into <strong>Likely Stroke</strong>, <strong>Likely Vibration</strong> and <strong>Not Likely</strong>. Click a row to add it. A likely vibration signal can be paired with <a href="#preset-strokes">Preset Strokes</a> to make the Handy stroke whenever the avatar vibrates.</p>
+    <h4>Parameter list</h4>
+    <p>Click <strong>Parameter list</strong> to see every signal VRChat reports for your avatar, unfiltered, with live values. Sort by <strong>Moving first</strong> (the ones that react when you touch your avatar) or <strong>A to Z</strong>. A tick means it's already one of your sources — click any row to add it.</p>
+    <h4>+ Add manually</h4>
+    <p>If you know a signal's exact name (copied from the Debug Log, say), click <strong>+ Add manually</strong>. Choose <strong>Source</strong> for that one exact signal, or <strong>Wildcard</strong> for a whole group of names — replace the part that changes with a star, e.g. <code>OGB/Pen/*/TouchSelf</code> matches TouchSelf on any avatar.</p>
+    <h4>Keywords</h4>
+    <p>The app guesses which signals are real depth signals from words in their names (like “Pen” or “Touch”). If your avatar uses other words, click <strong>Keywords</strong> and add your own to the <em>Likely</em> or <em>Not Likely</em> list. Built-in words can't be removed, and <strong>Check for New Keywords</strong> offers any added in an update without touching your own.</p>
+    <div class="tip">Missing a signal you expect? VRChat may have an out-of-date list. In VRChat open <strong>Action Menu → Options → OSC → Reset Config</strong>, then reload your avatar and press <strong>Refresh</strong>. <strong>Save List to File</strong> saves a list you can send to someone for help.</div>
   </div>
 
   <div class="guide" id="predictive-movement">
     <span class="priority">Recommended for Solace</span>
     <h3>Predictive Movement</h3>
-    <p>Compensates for hardware delay on toys like the Lovense Solace by learning your stroke pattern and sending it slightly ahead of time.</p>
-    <div class="gshot"><img src="shot_predictive_movement.jpg" alt="Predictive Movement page with the Send Ahead slider circled and a preview graph of received vs sent movement"></div>
-    <ol>
-      <li>Open <strong>Predictive Movement</strong> and enable it.</li>
-      <li>Set <strong>Send Ahead</strong> — use the Calibrate Delay tool below to find your device's exact number, or check the Device Reference Sheet for a starting estimate.</li>
-      <li>Adjust <strong>Size Tolerance</strong> and <strong>Speed Tolerance</strong> only if the prediction feels like it's "fighting" changes in your stroke pattern — higher tolerance adapts more slowly but stays smoother.</li>
-      <li>The first couple of strokes always play normally while it learns — this is expected.</li>
-    </ol>
+    <p>Some toys, like the Lovense Solace, react a moment after they get a command. Predictive Movement learns the rhythm of your strokes and sends each move slightly early so the toy lines up with what you see.</p>
+    <figure class="gshot"><img src="img/predictive.jpg" alt="Predictive Movement page with the Enabled switch, Send ahead by slider and Saved Presets circled" width="1650" height="1380" loading="lazy"><figcaption>The small dot next to Enabled turns green while it is actively predicting.</figcaption></figure><ol>
+      <li>Open <strong>Predictive Movement</strong> and switch <strong>Enabled</strong> on.</li>
+      <li>Set <strong>Send ahead by</strong> to roughly how late your toy reacts — measure it with <a href="#calibration">Calibrate Delay</a>, or tap a number on the <strong>Device Reference Sheet</strong> as a starting point. Too low and the toy still lags; too high and it moves before you do.</li>
+      <li>Adjust <strong>Size tolerance</strong> and <strong>Speed tolerance</strong> only if it feels like it's fighting changes in your stroke. <em>Higher</em> adapts to your new movement faster; <em>lower</em> holds the old pattern longer and eases into changes.</li>
+      <li>The first couple of strokes always pass straight through while it learns, and it works best with steady, repeating strokes. If you stop moving, it goes back to following you until it has learned your rhythm again.</li>
+    </ol><h4 id="saved-presets">Saved Presets</h4>
+    <p>Under the sliders, press <strong>+ Save current</strong>, name it (your toy's name works well) and it appears as a chip. Click the chip to load those settings again; ✎ renames it and ✕ deletes it. Handy when you swap between toys.</p>
+    <div class="tip"><strong>The Handy doesn't need this.</strong> It reacts fast, and leaving Predictive Movement on can make strokes shorter and jerkier. If a Handy connects while it's on, the app asks whether to turn it off.</div><figure class="gshot"><img src="img/notice_handy_predictive.jpg" alt="The Predictive Movement is on pop-up with the Turn it off button circled" width="1650" height="1350" loading="lazy"></figure>
+  </div>
+
+  <div class="guide" id="calibration">
+    <span class="priority">Recommended for Solace</span>
+    <h3>Calibrate Delay</h3>
+    <p>Measures how late your toy reacts and sets <strong>Send ahead by</strong> for you. It uses VRChat's <strong>Toggle Crouch</strong>, so you never need to click a button with a headset on. <strong>PC only for now</strong> — do it in PCVR or desktop mode first.</p>
+    <figure class="gshot"><img src="img/calibrate.jpg" alt="Calibrate delay card with the PC-only note, Start Calibration and Device Reference Sheet buttons circled" width="1650" height="1380" loading="lazy"></figure><ol>
+      <li>In VRChat, set crouch to <strong>Toggle</strong> (the <strong>C</strong> key by default).</li>
+      <li>Press <strong>Start</strong> in the main window and wait until your toy shows <strong>Connected</strong>. Turn <strong>Predictive Movement off</strong> while you calibrate.</li>
+      <li>On the Predictive Movement page press <strong>Start Calibration</strong>. The toy goes to the bottom.</li>
+      <li>In VRChat, press crouch. The app tells the toy to move.</li>
+      <li>The moment you see or feel the toy move, press crouch again — which way it toggles doesn't matter.</li>
+      <li>The toy goes back down. Repeat for <strong>3 rounds</strong> in total. The average is applied to <em>Send ahead by</em> automatically.</li>
+    </ol><div class="tip">Every unit is a little different, so measuring your own is always better than the <strong>Device Reference Sheet</strong> (a short list of delays other users have reported — click one to use it as a starting point).</div>
   </div>
 
   <div class="guide" id="motor-kick-start">
     <span class="priority">Recommended for Solace</span>
     <h3>Motor Kick-Start</h3>
-    <p>Helps toys with slow motor acceleration (e.g. Solace) respond faster right after a direction change.</p>
-    <div class="gshot"><img src="shot_motor_kickstart.jpg" alt="Motor Kick-Start page with the Burst Strength slider circled next to a before/after preview"></div>
-    <ol>
-      <li>Open <strong>Motor Kick-Start</strong> and enable it.</li>
-      <li>Tune <strong>Burst Strength</strong> first — lower value = stronger kick.</li>
-      <li><strong>Burst Length</strong> is subtle and often barely noticeable — leave it at default unless you want to fine-tune further.</li>
+    <p>Some toys (like the Lovense Solace) aren't told <em>where</em> to go — they're told <em>how fast</em>, and the motor needs a moment to get going. Kick-Start asks for extra speed right after each change of direction so strokes feel snappier.</p>
+    <figure class="gshot"><img src="img/kickstart.jpg" alt="Motor Kick-Start page with the Enabled switch and the Burst strength and Burst length sliders circled" width="1650" height="1020" loading="lazy"></figure><ol>
+      <li>Open <strong>Motor Kick-Start</strong> and switch <strong>Enabled</strong> on.</li>
+      <li>Tune <strong>Burst strength</strong> first — a <em>lower</em> number means a <em>stronger</em> kick.</li>
+      <li><strong>Burst length</strong> is subtle and often barely noticeable — leave it at the default unless you want to fine-tune.</li>
+    </ol><div class="tip">Leave this off for The Handy — it doesn't need it.</div>
+  </div>
+
+  <div class="guide" id="multi-toy">
+    <span class="priority">Core</span>
+    <h3>Multi-Toy Support</h3>
+    <p>Run more than one device at the same time — for example The Handy and a Lovense Solace — each with its own settings and its own live position bar.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/multitoy.jpg" alt="Live Handy Position page with two toys and the Connected Toys list boxed in the sidebar" width="1650" height="1350" loading="lazy"><figcaption>Every toy gets a bar; the sidebar lists them.</figcaption></figure><figure class="gshot"><img src="img/device_settings.jpg" alt="Toy Settings window for a Lovense Solace Pro with the Make this the Default toy button circled" width="1650" height="1350" loading="lazy"><figcaption>Click a toy for its own settings.</figcaption></figure></div><ol>
+      <li>Connect all your toys inside Intiface Central, then press <strong>Start</strong>. They appear under <strong>CONNECTED TOYS</strong> in the sidebar (shown only when more than one is connected).</li>
+      <li>The toy marked <strong>★</strong> is the <strong>Default toy</strong>. It follows every setting in the main window and is the only toy that can use <a href="#activated-source-switch">Activated Source Switch</a>.</li>
+      <li>Click any other toy (⚙ click for settings) to open its <strong>Toy Settings</strong>. For each feature, tick <strong>Use different settings for this toy</strong> to give it its own values; untick it to follow the main window again.</li>
+      <li>Under <strong>Sources for this toy</strong>, tick or untick sources to choose what moves it. At first it copies the Default toy; press <strong>Go back to following the Default toy</strong> to return. One source can move several toys at once.</li>
+      <li>Press <strong>Make this the Default toy</strong> to change which toy is the main one — the app remembers your choice.</li>
     </ol>
-    <div class="tip">Leave this off for The Handy — it doesn't need it.</div>
+  </div>
+
+  <div class="guide" id="troubleshooter"><span id="diagnostics"></span>
+    <span class="priority">Troubleshooting</span>
+    <h3>Troubleshooter</h3>
+    <p>A one-click self-check of the whole chain: your license, Intiface, your toy, and what VRChat is sending.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/help_menu.jpg" alt="The Help menu with Troubleshooter and Export OSC Session Log highlighted" width="1650" height="1500" loading="lazy"><figcaption>Help → Troubleshooter</figcaption></figure><figure class="gshot"><img src="img/troubleshooter.jpg" alt="Troubleshooter results with a failing Toy check highlighted and the Copy Report button circled" width="1650" height="1500" loading="lazy"><figcaption>Red items come with the likely cause and a fix.</figcaption></figure></div><ol>
+      <li>Open <strong>Help → Troubleshooter</strong>.</li>
+      <li>Green ✓ is fine, yellow is worth a look, and red ✗ is a problem — click a row to read <strong>Why</strong> and <strong>How to fix</strong>.</li>
+      <li>Fix the <strong>first red item first</strong>; the ones after it often clear up on their own.</li>
+      <li>Press <strong>Run Again</strong> after each change. <strong>Copy Report</strong> copies the results (without your license key) so you can email them to <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a>.</li>
+    </ol><div class="tip">It also warns you if more than one source is on, or if Predictive Movement is on with a Handy. A <strong>Common Problems</strong> list sits at the bottom of the window.</div>
   </div>
 
   <div class="guide" id="boost">
     <span class="priority">Optional</span>
     <h3>Boost</h3>
-    <p>Stretches your current motion range outward — e.g. moving within 80–100% becomes 40–100%.</p>
-    <ol>
-      <li>Drag the Boost slider up from 1.0 (off) toward 3.0 (max stretch).</li>
-      <li>It auto-calibrates to your actual current motion range, so you don't need to configure anything else.</li>
-    </ol>
+    <p>Some avatars never move all the way from 0% to 100%. Boost learns the range you've been using lately and stretches it, so strokes feel bigger — e.g. motion between 80% and 100% becomes about 40% to 100% at maximum.</p>
+    <figure class="gshot"><img src="img/boost.jpg" alt="Boost page with the Boost amount slider and Reset to 1.00 button circled" width="1650" height="1020" loading="lazy"></figure><ol>
+      <li>Open <strong>Boost</strong>.</li>
+      <li>Drag <strong>Boost amount</strong> up from <strong>1.00</strong> (off) toward <strong>3.00</strong> (biggest stretch). The preview shows what your avatar does versus what the toy does.</li>
+      <li>Press <strong>Reset to 1.00</strong> to switch it off.</li>
+    </ol><div class="tip">Raise it if your toy barely moves on small touches. Keep it low if it reaches the ends too easily.</div>
   </div>
 
   <div class="guide" id="deadzone">
     <span class="priority">Optional</span>
     <h3>Deadzone Limits</h3>
-    <p>Hard-limits how far the toy is ever allowed to move.</p>
-    <ol>
+    <p>Sets the lowest and highest point the toy is allowed to reach — it will never go below the Low limit or above the High limit. Keep strokes in a range that feels comfortable.</p>
+    <figure class="gshot"><img src="img/deadzone.jpg" alt="Deadzone Limits page with the Low limit and High limit sliders circled" width="1650" height="1020" loading="lazy"></figure><ol>
       <li>Open <strong>Deadzone Limits</strong>.</li>
-      <li>Set <strong>Low limit</strong> and <strong>High limit</strong> — the stroker will never move outside this range.</li>
-    </ol>
-  </div>
-
-  <div class="guide" id="source-mapping">
-    <span class="priority">Advanced</span>
-    <h3>Source Mapping (Custom Sources)</h3>
-    <p>Lets you add OSC addresses that aren't part of the default asset.</p>
-    <div class="gshot"><img src="shot_source_mapping.jpg" alt="Source Mapping page listing live-detected OSC addresses with the top one circled"></div>
-    <ol>
-      <li>Click <strong>Source Mapping</strong> to see every OSC address detected live.</li>
-      <li>Click any listed address to add it automatically, or use <strong>+ Add Source</strong> to paste one manually.</li>
-      <li>Rename, reorder, or delete custom sources any time using the icons next to each entry.</li>
-    </ol>
-  </div>
-
-  <div class="guide" id="universal-wildcard">
-    <span class="priority">Advanced</span>
-    <h3>Universal Wildcard</h3>
-    <p>Makes a built-in source (PenOthers/TouchSelf/TouchOthers) accept ANY tag name automatically, instead of only the default asset's exact tag.</p>
-    <ol>
-      <li>In <strong>Active Sources</strong>, check <strong>Universal Wildcard</strong> next to the source you want to make universal.</li>
-    </ol>
-    <div class="tip">Caveat: if two different tags matching the same universal source are both active at once, whichever packet arrives most recently wins — this can cause jittery positioning. Only enable it if you're confident just one matching tag is realistically active at a time.</div>
+      <li>Set <strong>Low limit</strong> and <strong>High limit</strong> (0.00 is the very bottom, 1.00 the very top). The Low limit can never go above the High limit.</li>
+    </ol><div class="tip">If the toy bumps the ends of its stroke, raise the Low limit or lower the High limit a little.</div>
   </div>
 
   <div class="guide" id="jitter">
     <span class="priority">Optional</span>
     <h3>Jitter Filter</h3>
-    <p>Ignores tiny movements caused by connection noise so the toy doesn't twitch on every packet.</p>
-    <ol>
-      <li>Enable <strong>Jitter Filter</strong>.</li>
-      <li>Raise the <strong>Threshold</strong> slider until twitching stops — start low and increase gradually.</li>
-    </ol>
+    <p>VRChat's signal can wobble a tiny bit even when nothing is really moving, which makes the toy twitch. The filter ignores any change smaller than the <strong>Threshold</strong>.</p>
+    <figure class="gshot"><img src="img/jitter.jpg" alt="Jitter Filter page with the Enabled switch and Threshold slider circled and a graph of red noisy and green smoothed lines" width="1650" height="1020" loading="lazy"></figure><ol>
+      <li>Open <strong>Jitter Filter</strong> and switch <strong>Enabled</strong> on.</li>
+      <li>Raise <strong>Threshold</strong> until the twitching stops — but no higher than needed, or small real movements get ignored too. The red line in the preview is what VRChat sends, the green line is what the toy gets.</li>
+    </ol><div class="tip">Start at 0.10. If the toy still buzzes when you hold still, raise it a little.</div>
+  </div>
+
+  <div class="guide" id="endpoint-snap">
+    <span class="priority">Optional</span>
+    <h3>Endpoint Snap</h3>
+    <p>When the position gets close to the very top or bottom, Endpoint Snap sends it the whole way — so strokes actually reach the ends even if your avatar never quite reports a full stroke.</p>
+    <figure class="gshot"><img src="img/endpoint_snap.jpg" alt="Endpoint Snap page with the Enabled switch and Snap zone slider circled" width="1650" height="1020" loading="lazy"></figure><ol>
+      <li>Open <strong>Endpoint Snap</strong> and switch <strong>Enabled</strong> on.</li>
+      <li>Set <strong>Snap zone</strong> — how close to an end counts as “close enough”. For example, 0.05 means anything within 5% of the top or bottom is sent all the way. Larger snaps more often.</li>
+    </ol><div class="tip">Keep it small. Deadzone Limits still apply, and Endpoint Snap isn't used during Preset Strokes. It can also be set per toy — see <a href="#multi-toy">Multi-Toy Support</a>.</div>
   </div>
 
   <div class="guide" id="invert">
     <span class="priority">Situational</span>
-    <h3>Invert Position</h3>
-    <p>Flips the position output — use this only if your device is physically mounted or held upside down.</p>
-    <ol>
-      <li>Check <strong>Invert (device upside down)</strong> near the bottom of the settings window.</li>
+    <h3>Invert</h3>
+    <p>Flips the direction of the toy. Turn it on if the toy moves up when it should move down — for example if you hold or mount it the other way around.</p>
+    <figure class="gshot"><img src="img/live_position.jpg" alt="Live Handy Position page with the Invert Off button circled and labelled Flip direction" width="1650" height="1200" loading="lazy"></figure><ol>
+      <li>Press the <strong>Invert</strong> button at the top of the <strong>Live Handy Position</strong> page (it shows <em>Invert On</em> / <em>Invert Off</em>) — or use <strong>Settings → Invert (toy held upside down)</strong>. Both are the same switch.</li>
+    </ol><div class="tip">The <strong>Pop out ↗</strong> button next to it opens a small always-on-top window with the same position bar, so you can watch it while you play.</div>
+  </div>
+
+  <div class="guide" id="profiles">
+    <span class="priority">Convenience</span>
+    <h3>Character Profiles</h3>
+    <p>A profile remembers all your settings (Boost, Deadzone, Predictive Movement, sources and so on) for one avatar, so they come back automatically whenever you use that avatar.</p>
+    <figure class="gshot"><img src="img/profiles_menu.jpg" alt="Character Profiles menu with Create New Profile and Profile Auto-Switch circled" width="1650" height="1350" loading="lazy"></figure><ol>
+      <li>Open the <strong>Character Profiles</strong> menu at the top of the window.</li>
+      <li><strong>Detect Current Avatar</strong> finds the avatar you're wearing right now.</li>
+      <li><strong>Create New Profile</strong> saves your current settings as a profile linked to that avatar. <strong>Save to Loaded Profile</strong> updates it later; <strong>Rename</strong> and <strong>Delete</strong> manage it.</li>
+      <li>Turn <strong>Profile Auto-Switch</strong> <em>ON</em> and the app loads the matching profile whenever you change into a linked avatar.</li>
+      <li>The list at the bottom loads any profile by hand — the ✓ marks the one currently loaded.</li>
     </ol>
   </div>
 
-  <div class="guide" id="diagnostics">
-    <span class="priority">Troubleshooting</span>
-    <h3>Run Diagnostics</h3>
-    <p>A one-click self-check that tells you exactly what's wrong.</p>
-    <div class="gshot"><img src="shot_diagnostics.jpg" alt="Diagnostics page with a failing check highlighted in red"></div>
-    <ol>
-      <li>Open <strong>Diagnostics</strong> from the sidebar.</li>
-      <li>Each line shows ✓, ⚠, or ✕ with a plain-English explanation for anything failing.</li>
-      <li>Click <strong>Run Again</strong> after making a change to re-check.</li>
-    </ol>
-  </div>
-
-  <div class="guide" id="calibration">
+  <div class="guide" id="macro-switch">
     <span class="priority">Advanced</span>
-    <h3>Calibrate Delay</h3>
-    <p>Measures your specific device's real-world delay for use with Predictive Movement.</p>
-    <ol>
-      <li>Turn off any continuously-running test signal first.</li>
-      <li>Click <strong>Start Calibration</strong>.</li>
-      <li>In the OSC Simulator, click <strong>Send Calibration Pulse</strong>.</li>
-      <li>Tap the button in OSCGetsHandy the instant you feel the toy move.</li>
-      <li>Repeat 3 times — the average is applied automatically to the Send Ahead slider.</li>
+    <h3>Macro Switch</h3>
+    <p>A macro lets something you do in VRChat change a setting in the app. Each macro has a <strong>trigger</strong> (the VRChat signal to watch), a <strong>mode</strong> (when it fires) and an <strong>action</strong> (what it changes).</p>
+    <div class="gshots"><figure class="gshot"><img src="img/macro_switch.jpg" alt="Macro Switch page listing three macros with + Add Macro circled" width="1650" height="1350" loading="lazy"><figcaption>Your macros</figcaption></figure><figure class="gshot"><img src="img/macro_editor.jpg" alt="Edit Macro window with the Pick Trigger button circled" width="1650" height="1350" loading="lazy"><figcaption>Making a macro</figcaption></figure></div><ol>
+      <li>Open <strong>Macro Switch</strong> and press <strong>+ Add Macro</strong>.</li>
+      <li>Give it a <strong>Name</strong>, then press <strong>Pick Trigger…</strong> and choose the VRChat signal. Signals only appear after the app has seen them, so flip the toggle in VRChat once first, then press Refresh.</li>
+      <li><strong>Trigger Type:</strong> <em>On/Off signal</em> for a toggle or button, or <em>Number from 0 to 1</em> for a slider — it counts as ON once it reaches the value you choose.</li>
+      <li><strong>Mode:</strong> <em>Toggle</em> turns the action on when the signal turns on and off when it turns off. <em>One-Time</em> fires once every time the signal changes — use it for actions that aren't on/off, like Raise Boost or Switch Profile.</li>
+      <li><strong>Action:</strong> most actions switch a feature on or off. <em>Raise/Lower Boost</em> changes Boost by the amount you choose, and <em>Switch Character Profile</em> loads one of your saved profiles. Press <strong>Save</strong>.</li>
+      <li>Untick a macro to pause it, use ✎ to edit it and ✕ to delete it.</li>
     </ol>
+  </div>
+
+  <div class="guide" id="preset-strokes">
+    <span class="priority">Advanced</span>
+    <h3>Preset Strokes</h3>
+    <p>Plays a steady up-and-down motion instead of following your avatar's real position. Handy for vibration-only signals, which have no depth to follow.</p>
+    <figure class="gshot"><img src="img/preset_strokes.jpg" alt="Preset Strokes page with the Enabled switch, Small stroke option and Stroke time slider circled" width="1650" height="1020" loading="lazy"></figure><ol>
+      <li>Open <strong>Preset Strokes</strong> and switch <strong>Enabled</strong> on.</li>
+      <li>Choose a style: <strong>Full stroke</strong> sweeps the whole range, <strong>Small stroke</strong> sweeps between the two limits you set under <em>Small Stroke Range</em>.</li>
+      <li>Set <strong>Stroke time</strong> — how long one sweep takes one way, in milliseconds. Lower is faster; the fastest allowed is 50 ms.</li>
+      <li>Make sure a source is active (see <a href="#custom-sources">Adding Custom Sources</a>) — it only plays while a source is sending data, stops where it is when the data goes quiet, and carries on in the same direction when data returns.</li>
+    </ol><div class="tip">Turn this on when you want a steady motion without moving your avatar. It pairs well with a <em>Likely Vibration</em> source.</div>
+  </div>
+
+  <div class="guide" id="activated-source-switch">
+    <span class="priority">Experimental</span>
+    <h3>Activated Source Switch</h3>
+    <p>Helps when your avatar has several sources and the wrong one ends up controlling the toy. You pick a gesture in VRChat (for example, sitting down and standing up five times quickly); the app checks which of your <strong>custom</strong> sources was moving most just before, works out which one you're really touching, and locks the toy onto it.</p>
+    <figure class="gshot"><img src="img/activation.jpg" alt="Activated Source Switch page with the Enabled switch, Pick trigger button and Test Now and Unlock buttons circled" width="1650" height="1350" loading="lazy"></figure><ol>
+      <li>Open <strong>Activated Source Switch</strong> and switch <strong>Enabled</strong> on.</li>
+      <li>Press <strong>Pick trigger…</strong> and choose the VRChat signal that starts it, like Sit or Crouch (do the gesture in VRChat once first so the app sees it).</li>
+      <li><strong>Trigger type:</strong> <em>Simple</em> for an on/off signal, or <em>Threshold</em> for a gradual value (like a 0–100% wheel).</li>
+      <li>Set <strong>Times it must switch on</strong> within <strong>this many seconds</strong> (for example 5 times within 3 seconds), and <strong>Look back</strong> — how many seconds the app looks back to decide which source you're touching.</li>
+      <li>Press <strong>Test Now</strong> to run the switch right away. Press <strong>Unlock</strong> to release the lock so all your sources work normally again.</li>
+    </ol><div class="tip">Only chooses between sources you added yourself (not the three built-in ones), and only controls the Default toy. While the trigger is OFF, your sources are paused — handy for things like “only when sitting”.</div>
   </div>
 
   <div class="guide" id="debug-log">
     <span class="priority">Troubleshooting</span>
     <h3>Debug Log &amp; Filters</h3>
-    <p>Live technical log of everything the bridge is doing.</p>
-    <div class="gshot"><img src="shot_debug_log.jpg" alt="Debug Log page with category filter pills and the Pop Out button circled"></div>
+    <p>A live feed of what the app is doing and every signal it receives from VRChat. Use it to find a signal's name or work out why something isn't working.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/debug_log.jpg" alt="Debug Log page showing a live colour-coded log with the Filters button circled" width="1650" height="1350" loading="lazy"><figcaption>The Debug Log page</figcaption></figure><figure class="gshot"><img src="img/filters.jpg" alt="Choose what shows in the log window with category switches" width="1650" height="1350" loading="lazy"><figcaption>Filters</figcaption></figure></div><ol>
+      <li>Open <strong>Debug Log</strong> from the sidebar and switch <strong>Show Debug Log</strong> on.</li>
+      <li><strong>Pause</strong> freezes the display so you can read or copy (lines that arrive meanwhile are still saved). <strong>Clear Log</strong> empties it. <strong>Save Log</strong> saves a text file. <strong>Pop out ↗</strong> opens it in its own window.</li>
+      <li><strong>Filters</strong> chooses which kinds of line show — OSC IN, HANDY OUT, INTIFACE, ERROR, OSC and BRIDGE — and lets you hide a single noisy signal. Unticking hides it from now on; lines already in the log stay.</li>
+      <li><strong>Collect all debug data</strong> (on by default, recommended) writes the whole session to the log file as it happens, so nothing is cut off even if the app crashes.</li>
+      <li><strong>Log unmatched signals</strong> also shows signals the app isn't using — useful for finding the exact name for <a href="#custom-sources">+ Add manually</a> or <a href="#macro-switch">Macros</a>.</li>
+      <li><strong>Save log file on close</strong> saves each session into a <code>debug_logs</code> folder next to the app (the newest 20 are kept). Press <strong>Open Folder</strong> to go there, and send the newest file to support if something went wrong.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="session-log">
+    <span class="priority">Troubleshooting</span>
+    <h3>Export OSC Session Log</h3>
+    <p>Saves a record of everything in a session as a CSV file — handy for sending to support.</p>
     <ol>
-      <li>Open <strong>Debug Log</strong> to view it inline, or click <strong>Pop Out</strong> for a separate window.</li>
-      <li>Click <strong>Filters</strong> to hide categories you don't need (OSC IN, HANDY OUT, INTIFACE, LICENSE, etc).</li>
-      <li>Use <strong>Pause</strong> to freeze scrolling while you read, and <strong>Clear Log</strong> to reset it.</li>
+      <li>Open <strong>Help → Export OSC Session Log</strong>.</li>
+      <li>Choose where to save the file. A message confirms how many entries were saved and where.</li>
+      <li>Email it to <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a> together with a description of what went wrong.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="hide-show">
+    <span class="priority">Convenience</span>
+    <h3>Hide, Show &amp; Reorder Pages</h3>
+    <p>Hide the pages you never use and arrange the rest in the order you like.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/view_menu.jpg" alt="The View menu with Reorganize and the Hide / Show Pages list highlighted" width="1650" height="1350" loading="lazy"><figcaption>View menu</figcaption></figure><figure class="gshot"><img src="img/reorganize.jpg" alt="Drag to Reorder window with one page row and the Save Order button circled" width="1650" height="1350" loading="lazy"><figcaption>Reorganize</figcaption></figure></div><ol>
+      <li>Open the <strong>View</strong> menu. Tick or untick a page under <strong>HIDE / SHOW PAGES</strong> — at least one page always has to stay visible.</li>
+      <li>Choose <strong>Reorganize</strong>, drag a row (or use ▲ ▼) to move it, then press <strong>Save Order</strong>. Hidden pages still appear there marked “(Hidden)”.</li>
+      <li>The sidebar's <strong>«</strong> button collapses it to a slim icon strip with a green or red dot on each icon — your choice is remembered.</li>
+    </ol>
+  </div>
+
+  <div class="guide" id="settings">
+    <span class="priority">Convenience</span>
+    <h3>Settings</h3>
+    <p>Open <strong>Settings</strong> from the menu bar.</p>
+    <figure class="gshot"><img src="img/settings.jpg" alt="Settings window with the Invert, haptics app and Intiface on another device switches circled" width="1650" height="1350" loading="lazy"></figure><ol>
+      <li><strong>Invert (toy held upside down)</strong> — the same switch as on the Live Handy Position page.</li>
+      <li><strong>Tell my avatar a haptics app is running</strong> — many avatars only switch on their touch and depth sensors once a haptics app says one is running. This sends that signal (<code>OGB_ENABLED</code>, the same one OscGoesBrrr sends): ON when your avatar is found, OFF when you press Stop or quit. If your avatar's sensors never react, make sure this is on.</li>
+      <li><strong>Use Intiface on another device (like my phone)</strong> — normally the app talks to Intiface Central on this PC. To use Intiface on your phone, switch this on, type the address shown in the Intiface mobile app (for example <code>ws://192.168.1.50:12345</code>), press <strong>Save</strong>, then press Stop and Start. Your PC and phone must be on the same network.</li>
     </ol>
   </div>
 
   <div class="guide" id="licensing">
     <span class="priority">Account</span>
     <h3>License &amp; Devices</h3>
-    <p>Each license key can be active on a limited number of devices at once.</p>
-    <ol>
-      <li>Menu bar → <strong>Help → About / License</strong> to check your activation status.</li>
-      <li>If you've replaced or reinstalled a computer and hit your device limit, email <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a> to have a slot freed up.</li>
+    <p>Your license key is emailed to you after purchase. Each license can be used on a limited number of PCs at once.</p>
+    <div class="gshots"><figure class="gshot"><img src="img/license_gate.jpg" alt="The OSCGetsHandy activation screen with License Key and Email fields and the Activate button" width="1650" height="1200" loading="lazy"><figcaption>First launch</figcaption></figure><figure class="gshot"><img src="img/about.jpg" alt="The About and License window showing an Activated status and PCs using this license" width="1650" height="1350" loading="lazy"><figcaption>Help → About / License</figcaption></figure></div><ol>
+      <li>On first launch, paste your <strong>License Key</strong> (it looks like XXXX-XXXX-XXXX-XXXX) and the <strong>Email</strong> you used at checkout, then press <strong>Activate</strong>.</li>
+      <li>To check your status later: <strong>Help → About / License</strong> shows whether this PC is allowed to use the app and how many PCs your license is using. The check is online, so it needs an internet connection.</li>
+      <li>Replaced a PC or reinstalled Windows and hit your limit? Email <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a> and a slot will be freed up.</li>
     </ol>
-  </div>
-
-  <div class="guide" id="multi-toy">
-    <span class="priority">Coming in v3.0.0</span>
-    <h3>Multi-Toy Support</h3>
-    <p>Run more than one device at the same time — e.g. The Handy and a Lovense Solace together — each with its own independent settings and its own bar on the Live Position card.</p>
-    <div class="tip">Not released yet. This guide will fill in with exact steps once v3.0.0 ships — <a href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener">join the Discord</a> for progress updates.</div>
-  </div>
-
-  <div class="guide" id="endpoint-snap">
-    <span class="priority">Coming in v3.0.0</span>
-    <h3>Endpoint Snap</h3>
-    <p>A per-device setting that snaps movement cleanly to the very top and bottom of your configured range, instead of trailing off.</p>
-    <div class="tip">Not released yet — will be overridable per device alongside Boost, Deadzone, Jitter, Invert, Predictive Movement and Kick-Start.</div>
-  </div>
-
-  <div class="guide" id="saved-presets">
-    <span class="priority">Coming in v3.0.0</span>
-    <h3>Saved Presets</h3>
-    <p>Save a full Predictive Movement setup (Send Ahead, tolerances) as a named preset per device, so switching toys doesn't mean re-tuning from scratch.</p>
-  </div>
-
-  <div class="guide" id="first-run-tutorial">
-    <span class="priority">Coming in v3.0.0</span>
-    <h3>First-Run Tutorial</h3>
-    <p>A guided modal walkthrough for new users — including a sound-based source test with three chimes (hold still, interact, done) so headset wearers can find their correct source without needing to look at a screen. Skippable at any time, and replayable later from the Help menu.</p>
-  </div>
-
-  <div class="guide" id="hide-show">
-    <span class="priority">Coming in v3.0.0</span>
-    <h3>Hide/Show Features</h3>
-    <p>A View menu listing every feature and source, with a checkmark next to the ones currently visible — so you can hide anything you don't use and bring it back later.</p>
   </div>
 
 </section>
