@@ -19,7 +19,7 @@
     <a href="index.html#features">Features</a>
     <a href="guides.html">How-To Guides</a>
     <a href="updates.html">Updates</a>
-    <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Discord</a>
+    <a href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener">Discord</a>
     <a class="cta" href="index.html#buy">Get It</a>
   </div>
 </nav>
@@ -35,6 +35,60 @@
        the date/version/text. This is literally the same text you'd
        post in Discord — just wrapped in <li> tags.
   ============================================================= -->
+
+  <div class="update-post">
+    <div class="version">v3.0.2</div>
+    <div class="date">Predictive Movement Fixed &mdash; October 2026</div>
+    <ul>
+      <li><strong>Predictive Movement fixed</strong> &mdash; It was mixing each up-stroke with a down-stroke, which made the toy do short, jittery moves. It now learns up-strokes and down-strokes separately and plays your real stroke size and rhythm ahead of time. Strokes keep their full size, prediction starts from the moment your stroke really turns around, and it keeps moving smoothly even if VRChat goes quiet for a moment. Works best with steady, repeating strokes.</li>
+      <li><strong>Predictive Movement and the Handy</strong> &mdash; The Handy reacts fast and doesn't need Predictive Movement. If a Handy connects while it's on, a pop-up asks if you'd like to turn it off.</li>
+      <li><strong>Source Priority</strong> &mdash; When more than one source is active, the toy now follows only one instead of jumping between them (All PenOthers, then All TouchOthers, then All TouchSelf, then your custom sources from top to bottom). The Debug Log shows a "Now following" line when it switches.</li>
+      <li><strong>More Than One Source warning</strong> &mdash; A pop-up now tells you it works best with just 1 source on when you press Start with several on, or turn on another source.</li>
+      <li><strong>Collect All Debug Data</strong> is now on by default, and the whole session is saved to the log file as it happens. Nothing gets cut off, even if the app crashes. Save Log now saves the whole session.</li>
+      <li>Errors inside the app window are now written to the debug log, so problems like a menu not opening leave a trace.</li>
+      <li>The Troubleshooter now warns about running more than 1 source, and about Predictive Movement being on with a Handy.</li>
+    </ul>
+  </div>
+
+  <div class="update-post">
+    <div class="version">v3.0.0</div>
+    <div class="date">All-New Look &amp; Multiple Toys &mdash; October 2026</div>
+    <ul>
+      <li><strong>Brand-new interface</strong> &mdash; Soft, bubbly and smooth, with a sidebar where every feature has its own page. The sidebar can collapse to a slim icon strip, and each page has a status bubble: green = On, red = Off.</li>
+      <li><strong>Multiple Toys</strong> &mdash; Connect more than one toy at the same time. Give any extra toy its own settings and choose which sources move it. Every connected toy gets its own live position bar.</li>
+      <li><strong>First-Run Tutorial</strong> &mdash; A short guided walkthrough on first launch. Skip it any time and replay it from Help.</li>
+      <li><strong>Find Source (Auto)</strong> &mdash; Not sure which signal to use? Press Start Test and listen for 3 chimes (hold still, touch it, finished) and the app finds it for you, even with a headset on.</li>
+      <li><strong>Calibrate Delay</strong> now uses the VRChat crouch toggle, so you never have to click a button with a headset on. PC only for now &mdash; try PCVR first.</li>
+      <li><strong>Endpoint Snap</strong> &mdash; Positions near the very top or bottom are sent the whole way, so strokes actually reach the ends.</li>
+      <li><strong>Troubleshooter</strong> (Help menu) checks your license, Intiface, your toy and what VRChat is sending, step by step, with the likely fix for anything wrong.</li>
+      <li>Export OSC Session Log, live "What it looks like" previews with Tip cards, drag-to-reorder custom sources, and the debug log is now saved automatically every time you close the app.</li>
+      <li>Fixed the license key generator tool freezing on the announcement step.</li>
+    </ul>
+  </div>
+
+  <div class="update-post">
+    <div class="version">v2.0.7</div>
+    <div class="date">Previous</div>
+    <ul>
+      <li>OSCGetsHandy now tells VRChat when it's connected (<code>OGB_ENABLED</code>) once a real connection is confirmed, and turns it off when you quit. You can switch this off in Settings.</li>
+      <li>Debug filter settings are now remembered between launches, and saved automatically with each avatar's Character Profile.</li>
+      <li>"Activated Source Switch" is now labelled (Experimental).</li>
+      <li>Fixed dark checkmarks on some checkboxes, and a tray icon that lingered after quitting.</li>
+    </ul>
+  </div>
+
+  <div class="update-post">
+    <div class="version">v2.0.5</div>
+    <div class="date">Previous</div>
+    <ul>
+      <li><strong>Macro Switch</strong> &mdash; Bind a VRChat avatar action to a function in the app, like turning Preset Strokes or Jitter Filter on and off, switching Character Profile, or raising and lowering Boost.</li>
+      <li>OSCGetsHandy now detects the avatar you already had loaded before launching, and has a Detect Current Avatar button.</li>
+      <li>New View menu to show or hide any section. Reorganize moved there too.</li>
+      <li>Source search now sorts likely sources first, and you can edit the keyword lists. New keywords in updates are offered to you without overwriting your own.</li>
+      <li>Parameter List can be sorted by name or by how often a value changes, and live values update without flashing.</li>
+      <li>Preset Stroking renamed to <strong>Preset Strokes</strong>, and a User Guide link added to the main window.</li>
+    </ul>
+  </div>
 
   <div class="update-post">
     <div class="version">v2.0.4</div>
@@ -83,13 +137,13 @@
   <div class="planned-card" style="max-width:500px;margin:0 auto;text-align:center;">
     <h4>👀 Got something big cooking...</h4>
     <p>Join the Discord to find out! 🎉</p>
-    <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Join the Discord</a>
+    <a href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Join the Discord</a>
   </div>
 
 </section>
 
 <footer>
-  <p>OSCGetsHandy by Devvious · <a href="https://discord.gg/DQhbp8vgg" target="_blank" rel="noopener">Discord</a> · <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a></p>
+  <p>OSCGetsHandy by Devvious · <a href="https://discord.gg/hHBfj7q7Je" target="_blank" rel="noopener">Discord</a> · <a href="mailto:Devviously@gmail.com">Devviously@gmail.com</a></p>
   <p>&copy; 2026 Devvious. Not affiliated with VRChat Inc.</p>
 </footer>
 
