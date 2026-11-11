@@ -1,0 +1,4 @@
+# Keep Claude Code local settings and secrets out of the repo
+.claude/settings.local.json
+.env
+.env.*
